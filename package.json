@@ -1,6 +1,22 @@
+{
+  "name": "neko_atsume",
+  "version": "1.0.0",
+  "description": "Cat game",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imorales01/neko_atsume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imorales01/neko_atsume/issues"
+  },
+  "homepage": "https://github.com/imorales01/neko_atsume#readme",
   "dependencies": {
     "express": "^4.16.3",
     "mongoose": "^5.1.6"
@@ -8,3 +24,4 @@
   "devDependencies": {
     "nodemon": "^1.17.5"
   }
+}
