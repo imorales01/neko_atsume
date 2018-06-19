@@ -1,6 +1,10 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6"
+  },
   "devDependencies": {
     "nodemon": "^1.17.5"
   }
