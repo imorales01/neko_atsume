@@ -4,6 +4,7 @@ Our project is based off the game "Neko Atsume: Kitty Collector" , created by Hi
 
 
 This wireframe demonstrates the logic of our application.
+
 1: Users are brought to an empty background screen and given a certain amount of starting income, fishes. These fishes are enough to allow the user to purchase a starting cat.
 
 2: To do so, users are to click the Menu button, followed by the Shop button, and then clicking their desired starting cat.
