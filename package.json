@@ -1,0 +1,6 @@
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
