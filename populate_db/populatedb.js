@@ -24,6 +24,7 @@ const catSchema = new Schema({
     powerLevel: String,
     personality: String,
   },
+  special: Boolean
 });
 
 // create models from schema
