@@ -31,4 +31,3 @@ In the original game, all cats can be acquired with some sort of bait. However, 
 # About the Stack
 We are using the MERN Stack to create this application.
 In the front end, we will be using React.js to render the background and cats. In the back end, we are using Express.js and Node.js to make user purchases. To store our information such as user data and cats, we are using MongoDB with mLab and Mongoose.
-
