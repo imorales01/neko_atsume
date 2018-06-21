@@ -18,7 +18,7 @@ class Menu extends Component {
 		return (
 			<div>
 				<button className='clickable' onClick={this.handleClick}>
-					<img src={MenuButton} className='button' />
+					<img src={MenuButton} />
 				</button>
 				<div className='menu'>
 					{this.state.selected ? <MenuInterface/> : <div /> }
