@@ -32,3 +32,9 @@
 	text-align: center;
 	top: 24%;
 }
+
+.menu-button {
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
