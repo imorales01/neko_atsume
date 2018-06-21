@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Background from '../img/background.jpg';
 import Menu from './menu';
 import HotSpot from './hotspot';
+import CatAlbum from './cat_album';
 
 const yardStyle = {
   margin: '0',
@@ -15,11 +16,14 @@ const yardStyle = {
 
 class Yard extends Component {
   render() {
-    return (
-      <div className='background-image' style={yardStyle}>
-        <Menu />
-      </div>
-    );
+    // return (
+    //   <div className='background-image' style={yardStyle}>
+    //     <Menu />
+    //     <CatAlbum />
+    //   </div>
+    // );
+    // testing purposes:
+    return <CatAlbum />;
   }
 };
 
