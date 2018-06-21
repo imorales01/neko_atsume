@@ -6,7 +6,7 @@ class Menu extends Component {
 		super(props);
 
 		this.state = {
-			selected: 'false'
+			selected: false
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -20,7 +20,7 @@ class Menu extends Component {
 					<h1> Menu </h1>
 				</button>
 				<div className="menu">
-					<MenuInterface />
+					{this.state.selected ? <MenuInterface/> : <div /> }
 				</div>
 			</div>
 		);
