@@ -12,20 +12,40 @@ const windowStyle = {
   width: '230px'
 };
 
+const nameStyle = {
+  position: "relative",
+  top: "11%",
+  fontFamily: "arial",
+  textAlign: "center",
+  height: "84%"
+};
+
+const dateStyle = {
+  position: "relative",
+  fontFamily: "arial",
+  textAlign: "center",
+};
+
 class CatAlbumWindow extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.getCats = this.getCats.bind(this);
   }
-  async handleClick(){
-    console.log("waiting...");
-    const response = await axios.get('api/sample');
-    console.log(response.data);
+  async getCats(){
+    // console.log("waiting...");
+    // const response = await axios.get('api/sample');
+    // console.log(response.data);
   }
   render() {
+    this.getCats();
     return (
       <div style={windowStyle}>
-        <button onClick={this.handleClick}> Load! </button>
+        <div style={nameStyle}>
+          ? ? ? ?
+        </div>
+        <div style={dateStyle}>
+          ----/--/--
+        </div>
       </div>
     );
   }
