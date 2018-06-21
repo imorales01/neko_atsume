@@ -1,15 +1,20 @@
 'use strict';
 
-const express = require('express');
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const connection = require('./config');
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 const createCats = require('./createcats')
-require('../models/user');
-require('../models/cat');
 
-const app = express();
-mongoose.connect(connection.url);
+//DB config
+const db = require('./config').url;
+
+// // Connect to MongoDB
+mongoose
+    .connect(db)
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err));
+    
+const User = mongoose.model('User');
+const Cat = mongoose.model('Cat');
 
 // create a test user
 User.create({ username: 'TestUser', catCollection: [] }, function (err) {

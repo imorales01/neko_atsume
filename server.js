@@ -6,8 +6,6 @@ const app = express();
 //DB config
 const db = require('./config/keys').mongoURI;
 
-
-
 // // Connect to MongoDB
 mongoose
     .connect(db)
