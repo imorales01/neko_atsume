@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MenuInterface from './menu_interface';
 import MenuButton from '../img/UI/img_menu.png';
+import CloseButton from '../img/UI/img_close.png';
 
 class Menu extends Component {
 	constructor(props) {
@@ -17,9 +18,7 @@ class Menu extends Component {
 	render() {
 		return (
 			<div>
-				<button className='clickable' onClick={this.handleClick}>
-					<img src={MenuButton} />
-				</button>
+				<img src={this.state.selected ? CloseButton : MenuButton} onClick={this.handleClick} style={{ height: "10%", width: "5%" }}/>
 				<div className='menu'>
 					{this.state.selected ? <MenuInterface/> : <div /> }
 				</div>
