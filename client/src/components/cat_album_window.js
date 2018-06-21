@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import AlbumWindowImg from '../img/UI/Windows/cat_album.png';
 
 // hard code height for now, depending on how big window container will be
@@ -29,15 +28,8 @@ const dateStyle = {
 class CatAlbumWindow extends Component {
   constructor(props) {
     super(props);
-    this.getCats = this.getCats.bind(this);
-  }
-  async getCats(){
-    // console.log("waiting...");
-    // const response = await axios.get('api/sample');
-    // console.log(response.data);
   }
   render() {
-    this.getCats();
     return (
       <div style={windowStyle}>
         <div style={nameStyle}>
