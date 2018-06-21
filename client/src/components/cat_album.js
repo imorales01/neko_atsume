@@ -9,11 +9,6 @@ const catStyle = {
 	backgroundPosition: 'center',
 };
 
-const windowStyle = {
-	height: "20%"
-};
-
-
 class CatAlbum extends Component {
 	constructor(props){
 		super(props);
