@@ -3,3 +3,9 @@
 	padding: 0;
 	height: 100%;
 }
+
+.clickable {
+	background-color: transparent;
+	border-color: transparent;
+	height: 30px;
+}
