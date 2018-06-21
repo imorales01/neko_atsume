@@ -7,12 +7,17 @@ class Menu extends Component {
 		this.state = {
 			selected: 'false'
 		};
+		this.handleClick = this.handleClick.bind(this);
 	}
-
+	handleClick(){
+		this.setState((prevState) => ({ selected: !prevState.selected }));
+	}
 	render() {
 		return (
 			<div className="menu">
-				<h1> menu </h1>
+				<button className="clickable" onClick={this.handleClick}>
+					<h1> Menu </h1>
+				</button>
 			</div>
 		);
 	}
