@@ -14,7 +14,30 @@ mongoose
     .catch(err => console.log(err));
 */
 
-app.get("/", (req, res) => res.send("Hello!"));
+
+// handle requests from client-side
+
+// test call
+app.get("/api/test", (req, res) => {
+    console.log("hello!");
+    res.send("Hello!");
+});
+
+// send 4 seen cats to fill a page of the cat album
+app.get("/api/cat-album/:page", (req, res) => {
+    res.send("Dummy");
+});
+
+// send the selected cat information
+app.get("/api/cat-album/:id", (req, res) => {
+    res.send("Dummy");
+});
+
+// send 4 cats to fill a page of the cat shop
+app.get("/api/cat-shop/:page", (req, res) => {
+    res.send("Dummy");
+});
+
 
 const port = process.env.PORT || 5000;
 
