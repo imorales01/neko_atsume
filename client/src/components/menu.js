@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MenuInterface from './menu_interface';
 
 class Menu extends Component {
 	constructor(props) {
@@ -14,10 +15,13 @@ class Menu extends Component {
 	}
 	render() {
 		return (
-			<div className="menu">
+			<div>
 				<button className="clickable" onClick={this.handleClick}>
 					<h1> Menu </h1>
 				</button>
+				<div className="menu">
+					<MenuInterface />
+				</div>
 			</div>
 		);
 	}
