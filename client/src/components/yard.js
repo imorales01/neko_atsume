@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Background from '../images/background.jpg';
+import Background from '../img/background.jpg';
 import Menu from './menu';
 
 var yardStyle = {
