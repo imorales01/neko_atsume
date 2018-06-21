@@ -14,18 +14,23 @@ class MenuInterface extends Component {
     this.handleClickSettings = this.handleClickSettings.bind(this);
 
   }
+  
   handleClickCats() {
 
-  }
+  };
+
   handleClickShop() {
 
-  }
+  };
+
   handleClickYard() {
 
-  }
+  };
+
   handleClickSettings() {
 
-  }
+  };
+
   render() {
     //render buttons on menu
     // CatsButton -> Cats Collection
@@ -33,15 +38,13 @@ class MenuInterface extends Component {
     // YardButton -> Close menu
     // SettingsButton -> will be converted to logout
     return (
-      <div>
         <table className='interface-container'>
-          <img src={CatsButton} className='button' onClick={this.handleClickCats} />
-          <img src={ShopButton} className='button' onClick={this.handleClickShop} />
+          <img src={CatsButton} alt='cats button' className='button' onClick={this.handleClickCats} />
+          <img src={ShopButton} alt='shop button' className='button' onClick={this.handleClickShop} />
           <br />
-          <img src={YardButton} className='button' onClick={this.handleClickYard} />
-          <img src={SettingsButton} className='button' onClick={this.handleClickSettings} />
+          <img src={YardButton} alt='yard button' className='button' onClick={this.handleClickYard} />
+          <img src={SettingsButton} alt='settings button' className='button' onClick={this.handleClickSettings} />
         </table>
-      </div>
     );
   }
 };

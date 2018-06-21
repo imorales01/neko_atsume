@@ -12,22 +12,33 @@ class Menu extends Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
-  }
+    this.showInterface = this.showInterface.bind(this);
+  };
+
   handleClick() {
     this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
-  }
+  };
+
+  showInterface() {
+    var open = this.state.menuOpen;
+    if(open) {
+      return (
+          <MenuInterface />
+      );
+    }
+  };
+
   render() {
     //render menu or close button in corner
     //render menu interface if menu is open
     return (
       <div>
-        <img src={this.state.menuOpen ? CloseButton : MenuButton} onClick={this.handleClick} style={{ height: "10%", width: "5%" }} />
-        <div className='menu'>
-          {this.state.menuOpen ? <MenuInterface /> : <div />}
-        </div>
+        <img className='menu-button' src={this.state.menuOpen ? CloseButton : MenuButton} alt='open or close interface' onClick={this.handleClick} style={{ height: "10%", width: "10%" }} />
+          {this.showInterface()}
       </div>
     );
-  }
+  };
+
 };
 
 export default Menu;

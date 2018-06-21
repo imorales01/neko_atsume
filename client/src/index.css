@@ -7,11 +7,11 @@
 
 .button {
 	height: 35%;
+	width: 35%;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 15px;
-	padding-bottom: 5px;
-	width: 35%;
+	padding-bottom: 15px;
 }
 
 .clickable {
@@ -23,12 +23,12 @@
 
 .interface-container {
 	background-color: #F7DFBD;
-	border: 3px solid black;
-	border-radius: 10px;
-	height: 30%;
+	border: 5px solid black;
+	border-radius: 50px;
+	height: 25%;
+	width: 25%;
 	margin: auto;
 	position: relative;
 	text-align: center;
 	top: 24%;
-	width: 15%;
 }
