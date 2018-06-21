@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Background from '../img/background.jpg';
 import Menu from './menu';
-import HotSpot from './hotspot';
+//import HotSpot from './hotspot';
 
 const yardStyle = {
   margin: '0',
