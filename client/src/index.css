@@ -9,3 +9,15 @@
 	border-color: transparent;
 	height: 30px;
 }
+
+.interface-container {
+	background-color: #F7DFBD;
+	border: 3px solid black;
+	border-radius: 10px;
+	height: 30%;
+	margin: auto;
+	position: relative;
+	text-align: center;
+	top: 30%;
+	width: 25%;
+}
