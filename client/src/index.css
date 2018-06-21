@@ -32,3 +32,8 @@
 	top: 24%;
 	width: 15%;
 }
+
+.title {
+	float: right;
+	height: 10%;
+}
