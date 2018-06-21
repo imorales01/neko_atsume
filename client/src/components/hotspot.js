@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class CatAlbum extends Component {
+class HotSpot extends Component {
 	render() {
 		return (
-			
+            null
 		);
 	}
 };
 
-export default CatAlbum;
+export default HotSpot;

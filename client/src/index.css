@@ -3,3 +3,32 @@
 	padding: 0;
 	height: 100%;
 }
+
+
+.button {
+	height: 35%;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	width: 35%;
+}
+
+.clickable {
+	background-color: transparent;
+	border-color: transparent;
+	height: 10%;
+	width: 5%;
+}
+
+.interface-container {
+	background-color: #F7DFBD;
+	border: 3px solid black;
+	border-radius: 10px;
+	height: 30%;
+	margin: auto;
+	position: relative;
+	text-align: center;
+	top: 24%;
+	width: 15%;
+}
