@@ -10,14 +10,14 @@ const catStyle = {
 };
 
 class CatAlbum extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 	}
 
 	render() {
 		return (
 			<div style={catStyle}>
-				<img src={MenuButton} onClick={ () => {} } style={{ height: "10%", width: "5%" }} />
+				<img src={MenuButton} onClick={() => { }} style={{ height: "10%", width: "5%" }} />
 				<img src={Title} className='title' />
 				<AlbumWindowContainer />
 			</div>
