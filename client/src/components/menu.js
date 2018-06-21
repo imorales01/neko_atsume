@@ -8,19 +8,20 @@ class Menu extends Component {
 		super(props);
 
 		this.state = {
-			selected: false
+			menuOpen: false
 		};
+
 		this.handleClick = this.handleClick.bind(this);
 	}
 	handleClick(){
-		this.setState((prevState) => ({ selected: !prevState.selected }));
+		this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
 	}
 	render() {
 		return (
 			<div>
-				<img src={this.state.selected ? CloseButton : MenuButton} onClick={this.handleClick} style={{ height: "10%", width: "5%" }}/>
+				<img src={this.state.menuOpen ? CloseButton : MenuButton} onClick={this.handleClick} style={{ height: "10%", width: "5%" }}/>
 				<div className='menu'>
-					{this.state.selected ? <MenuInterface/> : <div /> }
+					{this.state.menuOpen ? <MenuInterface/> : <div /> }
 				</div>
 			</div>
 		);
