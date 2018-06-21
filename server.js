@@ -4,24 +4,31 @@ const mongoose = require("mongoose");
 const app = express();
 
 //DB config
-const db = require("./config/keys").mongoURI;
+const db = require('./config/keys').mongoURI;
 
-// Connect to MongoDB
-/*
+
+
+// // Connect to MongoDB
 mongoose
     .connect(db)
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
-*/
 
+require('./models/user');
+require('./models/cat');
+    
+const User = mongoose.model('User');
+const Cat = mongoose.model('Cat');
 
 // handle requests from client-side
 
 // test call
-app.get("/api/test", (req, res) => {
-    console.log("hello!");
-    res.send("Hello!");
+app.get("/api/sample", async (req, res) => {
+    const data = await Cat.findOne();
+    console.log(data);
+    res.send(data);  
 });
+
 
 // send 4 seen cats to fill a page of the cat album
 app.get("/api/cat-album/:page", (req, res) => {

@@ -17,8 +17,10 @@ class CatAlbumWindow extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(){
-    
+  async handleClick(){
+    console.log("waiting...");
+    const response = await axios.get('api/sample');
+    console.log(response.data);
   }
   render() {
     return (

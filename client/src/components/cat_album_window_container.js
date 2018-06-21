@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CatAlbumWindow from './cat_album_window';
 
 const catStyle = {
-  height: "30%"
+  height: "30%",
 };
 
 class CatAlbumWindowContainer extends Component {
