@@ -26,6 +26,7 @@ class Yard extends Component {
     //return <CatShop />;
     //return <CatAlbum />;
 
-};
+  };
+}
 
 export default Yard;
