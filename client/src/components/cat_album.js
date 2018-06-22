@@ -13,6 +13,8 @@ const catStyle = {
 
 const leftArrowStyle = {
 	height: "8%",
+	position: "relative",
+	top: "50%"
 };
 
 const rightArrowStyle = {
@@ -28,16 +30,34 @@ class CatAlbum extends Component {
 		this.state = {
 			page: 0
 		}
+		this.handleClickLeft = this.handleClickLeft.bind(this);
+		this.handleClickRight = this.handleClickRight.bind(this);
 	}
-
+	// todo : handle multiple pages and compress into one function
+	handleClickRight(){
+		this.setState(() => ({ page: 1 }));
+	}
+	handleClickLeft(){
+		this.setState(() => ({ page: 0 }));
+	}
 	render() {
 		return (
 			<div style={catStyle}>
 				<img src={MenuButton} onClick={() => { }} style={{ height: "10%", width: "5%" }} />
 				<img src={Title} className='title' />
-				{this.state.page===0 ? null : <img src={arrowLeft} style={leftArrowStyle}/>}
+				{this.state.page===0 ? null : <img
+					src={ arrowLeft }
+					style={ leftArrowStyle }
+					onClick={ this.handleClickLeft }
+					/>
+				}
 				<AlbumWindowContainer page={this.state.page} />
-				{this.state.page===1 ? null : <img src={arrowRight} style={rightArrowStyle}/>}
+				{this.state.page===1 ? null : <img
+					src={ arrowRight }
+					style={ rightArrowStyle }
+					onClick={ this.handleClickRight }
+					/>
+				}
 			</div>
 		);
 	}
