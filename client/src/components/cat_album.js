@@ -22,7 +22,6 @@ const rightArrowStyle = {
 	position: "absolute",
 	right: "0"
 };
-  
 
 class CatAlbum extends Component {
 	constructor(props) {
@@ -51,7 +50,9 @@ class CatAlbum extends Component {
 					onClick={ this.handleClickLeft }
 					/>
 				}
+
 				<AlbumWindowContainer page={this.state.page} />
+				
 				{this.state.page===1 ? null : <img
 					src={ arrowRight }
 					style={ rightArrowStyle }
