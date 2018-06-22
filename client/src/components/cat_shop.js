@@ -42,6 +42,7 @@ class CatShop extends Component {
   }
 	render() {
 		return (
+
 			<div style={shopStyle}>
 				<img src={MenuButton} onClick={ () => { } } style={{ height: "10%", width: "5%" }} />
 				<img src={Title} className='title' />

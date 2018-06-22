@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Background from '../img/UI/TileBGs/cat_tile.png';
 import Title from '../img/UI/Titles/cat_title.png';
 import MenuButton from '../img/UI/img_menu.png';
+import YardButton from '../img/UI/img_yard.png';
 import AlbumWindowContainer from './cat_album_window_container';
 import arrowLeft from '../img/UI/arrow_left.png';
 import arrowRight from '../img/UI/arrow_right.png';
@@ -13,8 +15,9 @@ const catStyle = {
 
 const leftArrowStyle = {
 	height: "8%",
-	position: "relative",
-	top: "50%"
+	position: "absolute",
+	left: "0",
+	top: "40%"
 };
 
 const rightArrowStyle = {
@@ -42,7 +45,11 @@ class CatAlbum extends Component {
 	render() {
 		return (
 			<div style={catStyle}>
-				<img src={MenuButton} onClick={() => { }} style={{ height: "10%", width: "5%" }} />
+
+				<Link to="/">
+            <img className="yard-button" src={YardButton} alt='yard button' style={{ height: "10%", weight: "10%" }} />
+      	</Link>
+
 				<img src={Title} className='title' />
 				{this.state.page===0 ? null : <img
 					src={ arrowLeft }

@@ -43,4 +43,18 @@
 	position: relative;
 	top: 20px;
 	left: 20px;
+	height: 10%;
+	width: 10%;
+}
+
+.yard-button {
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+
+.title {
+	position: relative;
+	top: 20px;
+	right: 20px;
 }

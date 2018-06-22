@@ -5,7 +5,6 @@ import HotSpot from './hotspot';
 import CatAlbum from './cat_album';
 import CatShop from './cat_shop';
 
-
 const yardStyle = {
   margin: '0',
   height: '100%',
