@@ -3,7 +3,7 @@ import axios from 'axios';
 import CatAlbumWindow from './cat_album_window';
 
 const catStyle = {
-  height: "30%",
+  height: "20%",
   margin: "auto",
   width: "50%",
   position: "relative"
