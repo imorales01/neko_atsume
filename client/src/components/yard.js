@@ -18,15 +18,15 @@ const yardStyle = {
 
 class Yard extends Component {
   render() {
-    // return (
-    //   <div className='background-image' style={yardStyle}>
-    //     <Menu />
-    //     <CatAlbum />
-    //   </div>
-    // );
+    return (
+      <div className='background-image' style={yardStyle}>
+        <Menu />
+      </div>
+    );
     // testing purposes:
-    return <CatShop />;
-  }
+    //return <CatShop />;
+    //return <CatAlbum />;
+
 };
 
 export default Yard;
