@@ -1,0 +1,65 @@
+import React, { Component } from 'react';
+import AlbumWindowImg from '../img/UI/Windows/cat_album.png';
+
+// hard code height for now, depending on how big window container will be
+const windowStyle = {
+  backgroundImage: `url(${AlbumWindowImg})`,
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100% 100%',
+  height: '250px',
+  width: '230px'
+};
+
+const iconStyle = {
+  height: "30%",
+  position: "relative",
+  top: "30%",
+  margin: "auto"
+};
+
+const nameStyle = {
+  position: "relative",
+  top: "11%",
+  fontFamily: "arial",
+  textAlign: "center",
+  height: "70%"
+};
+
+const dateStyle = {
+  position: "relative",
+  fontFamily: "arial",
+  textAlign: "center",
+  top: "13%"
+};
+
+class CatAlbumWindow extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  render() {
+    let namePath = this.props.catData[0].name;
+    // todo : dont hardcode this lol 
+    if (namePath === 'Sassy Fran'){
+      namePath = 'Sassy_Fran';   
+    }
+    else if (namePath === 'Saint Purrtrick'){
+      namePath = 'Saint_Purrtrick';   
+    }
+    return (
+      <div style={windowStyle}>
+        <div style={nameStyle}>
+          {this.props.date ? this.props.catData[0].name : "? ? ? ?" } 
+          <br />
+          <img src={this.props.date ? require(`../img/cats/${namePath}/icon.png`) : require(`../img/cats/unknown_icon.png`)} style={iconStyle} />
+        </div>
+        <div style={dateStyle}>
+          {this.props.date ? this.props.date : "--/--/----" } 
+        </div>
+      </div>
+    );
+  }
+};
+
+export default CatAlbumWindow;

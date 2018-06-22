@@ -33,6 +33,12 @@
 	top: 24%;
 }
 
+.title {
+	float: right;
+	height: 10%;
+
+}
+
 .menu-button {
 	position: relative;
 	top: 20px;
