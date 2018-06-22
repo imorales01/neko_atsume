@@ -18,7 +18,7 @@ class CatAlbumWindowContainer extends Component {
     this.state = {
       cats: [{
             data: null,
-            flag: false
+            date: null
           }],
       catCount: 0,
       filled: false,
@@ -44,7 +44,7 @@ class CatAlbumWindowContainer extends Component {
     }
     
     let windows = catData.map((cat) => {
-      return <CatAlbumWindow catData={cat.data} flag={cat.flag}/>;
+      return <CatAlbumWindow catData={cat.data} date={cat.date}/>;
     });
     // let window = <CatAlbumWindow key={this.state.cats[0].data.catID} catData={this.state.cats[0].data} flag={this.state.cats[0].flag}/>;
     console.log(windows);

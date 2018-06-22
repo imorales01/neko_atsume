@@ -49,28 +49,27 @@ app.get('api/sample', async (req, res) => {
 // 	res.send(count);
 // });
 
-// send the selected cat information
+// send the specified cat information and date collected if user has collected selected cat
 app.get('/api/cat/:id', async (req, res) => {
 	const data = await Cat.find({ catID: req.params.id });
-	let flag = false;
-	const userData = await User.find({ _id: userID });
-	for (cat in userData.catCollection) {
-		if (req.params.id === cat.catID) {
-			flag = true;
+	let date = null;
+	const userData = await User.find({ userID });
+	for (user in userData) {
+		if (req.params.id === user.catCollection[i].catID) {
+			date = user.catCollection[i].dateCollected;
 		}
 	}
-	// set flag true for testing purposes
-	//flag = true;
-	const obj = { data, flag }; 
+	// set date for testing purposes
+		date = "01/10/2018";
+	const obj = { data, date }; 
     res.send(obj);
 });
 
 
-// todo : test
 // send boolean if cat specified has been collected or not
 app.get('/api/cat/collected/:id', async (req, res) => {
-	const flag = false;
-	const userData = await User.findById({ "$oid": userID });
+	let flag = false;
+	const userData = await User.find({ userID });
 	for (user in userData) {
 		if (req.params.id === user.catCollection[i].catID) {
 			flag = true;

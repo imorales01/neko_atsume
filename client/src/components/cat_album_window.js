@@ -34,10 +34,10 @@ class CatAlbumWindow extends Component {
     return (
       <div style={windowStyle}>
         <div style={nameStyle}>
-          {this.props.flag ? this.props.catData[0].name : "? ? ? ?" } 
+          {this.props.date ? this.props.catData[0].name : "? ? ? ?" } 
         </div>
         <div style={dateStyle}>
-          {this.props.cat ? this.props.cat.name : "--/--/----" } 
+          {this.props.date ? this.props.date : "--/--/----" } 
         </div>
       </div>
     );
