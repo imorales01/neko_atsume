@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import CatShopWindowContainer from './cat_shop_window_container';
 import Background from '../img/UI/TileBGs/shop_tile.png';
+import YardButton from '../img/UI/img_yard.png';
 import Title from '../img/UI/Titles/shop_title.png';
 import MenuButton from '../img/UI/img_menu.png';
 import arrowLeft from '../img/UI/arrow_left.png';
@@ -14,8 +16,9 @@ const shopStyle = {
 
 const leftArrowStyle = {
 	height: "8%",
-	position: "relative",
-	top: "50%"
+	position: "absolute",
+	left: "0",
+	top: "40%"
 };
 
 const rightArrowStyle = {
@@ -44,8 +47,13 @@ class CatShop extends Component {
 		return (
 
 			<div style={shopStyle}>
-				<img src={MenuButton} onClick={ () => { } } style={{ height: "10%", width: "5%" }} />
+				
+				<Link to="/">
+            <img className="yard-button" src={YardButton} alt='yard button' style={{ height: "10%", weight: "10%" }} />
+      	</Link>
+
 				<img src={Title} className='title' />
+				
 				{this.state.page===0 ? null : <img
 					src={ arrowLeft }
 					style={ leftArrowStyle }
