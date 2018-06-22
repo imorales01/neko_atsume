@@ -35,24 +35,29 @@ app.get('/api/sample', async (req, res) => {
 	res.send(data);
 });
 
+// do we need this?
 // send cats to fill cat album and shop
-app.get('/api/cat/', async (req, res) => {
-	const data = await Cat.find();
+// app.get('/api/cat/:id', async (req, res) => {
+// 	const data = await Cat.find();
+// 	res.send(data);
+// });
+
+// send number of cats in database
+app.get('/api/cat/count', async (req, res) => {
+	const data = await Cat.count();
 	res.send(data);
 });
 
-// do we need this?
-// // send the selected cat information
-// app.get('/api/cat/:id', async (req, res) => {
-//     const data = await Cat.find({ catID: req.params.id });
-//     res.send(data);
-//     res.send('Dummy');
-// });
+// send the selected cat information
+app.get('/api/cat/:id', async (req, res) => {
+    const data = await Cat.find({ catID: req.params.id });
+    res.send(data);
+});
 
 
 // todo : test
 // send boolean if cat specified has been collected or not
-app.get('/api/cat/:id', async (req, res) => {
+app.get('/api/cat/collected/:id', async (req, res) => {
 	const flag = false;
 	const userData = await User.findById(userID);
 	for (user in userData) {
