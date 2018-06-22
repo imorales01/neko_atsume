@@ -6,7 +6,7 @@ const windowStyle = {
   backgroundImage: `url(${AlbumWindowImg})`,
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  backgroundSize: '100% 100%',
+  backgroundSize: '85% 85%',
   height: '250px',
   width: '230px'
 };
@@ -20,7 +20,7 @@ const iconStyle = {
 
 const nameStyle = {
   position: "relative",
-  top: "11%",
+  top: "16%",
   fontFamily: "arial",
   textAlign: "center",
   height: "70%"
@@ -30,7 +30,7 @@ const dateStyle = {
   position: "relative",
   fontFamily: "arial",
   textAlign: "center",
-  top: "13%"
+  top: "8%"
 };
 
 class CatAlbumWindow extends Component {
