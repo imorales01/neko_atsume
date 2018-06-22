@@ -3,6 +3,8 @@ import Background from '../img/background.jpg';
 import Menu from './menu';
 import HotSpot from './hotspot';
 import CatAlbum from './cat_album';
+import CatShop from './cat_shop';
+
 
 const yardStyle = {
   margin: '0',
@@ -23,7 +25,7 @@ class Yard extends Component {
     //   </div>
     // );
     // testing purposes:
-    return <CatAlbum />;
+    return <CatShop />;
   }
 };
 
