@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PlaceDownButton from '../img/UI/place.png';
 
-const hotStyle = {
-  margin: "auto",
-  height: "20%",
-  width: "20%"
+
+const catStyle = {
+  paddingLeft: "150px",
+  paddingTop: "160px"
 }
 
 class HotSpot extends Component {
@@ -13,7 +13,15 @@ class HotSpot extends Component {
     this.state = {
       isEmpty: true,
       randNum: null,
-      namePath: null
+      namePath: null,
+      hotStyle: {
+        paddingLeft: this.props.paddingLeft,
+        paddingTop: this.props.paddingTop
+      },
+      catStyle: {
+        paddingLeft: this.props.paddingLeftCat,
+        paddingTop: this.props.paddingTopCat
+      }
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -27,8 +35,8 @@ class HotSpot extends Component {
   render() {
     return (
       <div>
-          { this.state.isEmpty ? <img src={PlaceDownButton} onClick={this.onClick} className='hotspot' /> :
-            <img src={require(`../img/cats/${this.state.namePath}/${this.state.randNum}.gif`)} className='cat' />} 
+          { this.state.isEmpty ? <img src={PlaceDownButton} onClick={this.onClick} className='hotspot' style={this.state.hotStyle}/> :
+            <img src={require(`../img/cats/${this.state.namePath}/${this.state.randNum}.gif`)} className='cat' style={this.state.catStyle}/>} 
       </div>
     );
   }
