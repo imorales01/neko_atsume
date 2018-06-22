@@ -18,18 +18,19 @@ require('./models/cat');
 const User = mongoose.model('User');
 const Cat = mongoose.model('Cat');
 
-const userID = null;
+//test data
+const userID = "5b2be22e1218433991453955";
 
 // initial call from login sets user id
-app.get('api/user/:id'), (req, res) => {
-	userID = req.params.id;
-	res.send(true);
-}
+// app.get('api/user/:id'), (req, res) => {
+// 	userID = req.params.id;
+// 	res.send(true);
+// }
 
 // handle requests from client-side
 
 // test call
-app.get('/api/sample', async (req, res) => {
+app.get('api/sample', async (req, res) => {
 	const data = await Cat.findOne();
 	console.log(data);
 	res.send(data);
@@ -43,15 +44,23 @@ app.get('/api/sample', async (req, res) => {
 // });
 
 // send number of cats in database
-app.get('/api/cat/count', async (req, res) => {
-	const data = await Cat.count();
-	res.send(data);
-});
+// app.get('/api/cat/count', async (req, res) => {
+// 	const count = await Cat.count({}, function(err, count) { } )
+// 	res.send(count);
+// });
 
 // send the selected cat information
 app.get('/api/cat/:id', async (req, res) => {
-    const data = await Cat.find({ catID: req.params.id });
-    res.send(data);
+	const data = await Cat.find({ catID: req.params.id });
+	const flag = false;
+	const userData = await User.find({ _id: userID });
+	for (cat in userData.catCollection) {
+		if (req.params.id === cat.catID) {
+			flag = true;
+		}
+	}
+	const obj = { data, flag }; 
+    res.send(obj);
 });
 
 
@@ -59,7 +68,7 @@ app.get('/api/cat/:id', async (req, res) => {
 // send boolean if cat specified has been collected or not
 app.get('/api/cat/collected/:id', async (req, res) => {
 	const flag = false;
-	const userData = await User.findById(userID);
+	const userData = await User.findById({ "$oid": userID });
 	for (user in userData) {
 		if (req.params.id === user.catCollection[i].catID) {
 			flag = true;

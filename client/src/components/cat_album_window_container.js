@@ -36,9 +36,8 @@ class CatAlbumWindowContainer extends Component {
       // the data for the cat with id i
       // cat IDs are enumerated from 1
       const cat = await axios.get(`api/cat/${i}`);
-      // has the cat with id i been collected for this user
-      const isCollected = await axios.get(`api/cat/collected/${i}`);
-      catData.push(cat.data, isCollected.data);
+
+      catData.push(cat.data);
     }
     
     this.setState( () => ({ cats: catData, catCount: 7, filled: true }));
