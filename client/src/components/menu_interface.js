@@ -3,34 +3,14 @@ import CatsButton from '../img/UI/img_cats.png';
 import ShopButton from '../img/UI/img_shop.png';
 import YardButton from '../img/UI/img_yard.png';
 import SettingsButton from '../img/UI/img_settings.png';
+import { Link } from 'react-router-dom';
+import CatAlbum from './cat_album';
 
 class MenuInterface extends Component {
   constructor(props) {
     super(props);
-
-    this.handleClickCats = this.handleClickCats.bind(this);
-    this.handleClickShop = this.handleClickShop.bind(this);
-    this.handleClickYard = this.handleClickYard.bind(this);
-    this.handleClickSettings = this.handleClickSettings.bind(this);
-
-  }
+  };
   
-  handleClickCats() {
-
-  };
-
-  handleClickShop() {
-
-  };
-
-  handleClickYard() {
-
-  };
-
-  handleClickSettings() {
-
-  };
-
   render() {
     //render buttons on menu
     // CatsButton -> Cats Collection
@@ -39,11 +19,25 @@ class MenuInterface extends Component {
     // SettingsButton -> will be converted to logout
     return (
         <table className='interface-container'>
-          <img src={CatsButton} alt='cats button' className='button' onClick={this.handleClickCats} />
-          <img src={ShopButton} alt='shop button' className='button' onClick={this.handleClickShop} />
+
+          <Link to="/cat_album">
+            <img src={CatsButton} alt='cats button' className='button' />
+          </Link>
+
+          <Link to="/cat_shop">
+            <img src={ShopButton} alt='shop button' className='button' />
+          </Link>
+
           <br />
-          <img src={YardButton} alt='yard button' className='button' onClick={this.handleClickYard} />
-          <img src={SettingsButton} alt='settings button' className='button' onClick={this.handleClickSettings} />
+
+          <Link to="/">
+            <img src={YardButton} alt='yard button' className='button' />
+          </Link>
+
+          <Link to="/">
+          <img src={SettingsButton} alt='settings button' className='button' />
+          </Link>
+
         </table>
     );
   }

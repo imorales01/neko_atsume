@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Background from '../img/background.jpg';
 import Menu from './menu';
-import HotSpot from './hotspot';
-import CatAlbum from './cat_album';
+//import HotSpot from './hotspot';
+//import CatAlbum from './cat_album';
 
 const yardStyle = {
   margin: '0',
