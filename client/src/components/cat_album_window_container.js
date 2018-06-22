@@ -4,6 +4,9 @@ import CatAlbumWindow from './cat_album_window';
 
 const catStyle = {
   height: "30%",
+  margin: "auto",
+  width: "50%",
+  position: "relative"
 };
 
 class CatAlbumWindowContainer extends Component {
@@ -22,7 +25,7 @@ class CatAlbumWindowContainer extends Component {
           }],
       catCount: 0,
       filled: false,
-      windows: []
+      windows: [],
     };
 
     this.getCats = this.getCats.bind(this);
@@ -59,7 +62,7 @@ class CatAlbumWindowContainer extends Component {
     }
     return (
       <div style={catStyle}>
-        {this.state.windows}
+        {this.state.windows.slice(0,4)}
       </div>
     );
   }
