@@ -28,15 +28,16 @@ const dateStyle = {
 class CatAlbumWindow extends Component {
   constructor(props) {
     super(props);
+    console.log(props.catData);
   }
   render() {
     return (
       <div style={windowStyle}>
         <div style={nameStyle}>
-          ? ? ? ?
+          {this.props.flag ? this.props.catData[0].name : "? ? ? ?" } 
         </div>
         <div style={dateStyle}>
-          ----/--/--
+          {this.props.cat ? this.props.cat.name : "--/--/----" } 
         </div>
       </div>
     );

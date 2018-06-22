@@ -52,13 +52,15 @@ app.get('api/sample', async (req, res) => {
 // send the selected cat information
 app.get('/api/cat/:id', async (req, res) => {
 	const data = await Cat.find({ catID: req.params.id });
-	const flag = false;
+	let flag = false;
 	const userData = await User.find({ _id: userID });
 	for (cat in userData.catCollection) {
 		if (req.params.id === cat.catID) {
 			flag = true;
 		}
 	}
+	// set flag true for testing purposes
+	//flag = true;
 	const obj = { data, flag }; 
     res.send(obj);
 });

@@ -16,15 +16,18 @@ class CatAlbumWindowContainer extends Component {
     // catCount: number of all cats total
     // filled: if data about cats has already been retrieved
     this.state = {
-      cats: [],
+      cats: [{
+            data: null,
+            flag: false
+          }],
       catCount: 0,
-      filled: false
+      filled: false,
+      windows: []
     };
 
     this.getCats = this.getCats.bind(this);
   }
 
-  // todo : faster to do this server-side?
   async getCats(){
     // get number of cats from database
     // const count = await axios.get('/api/cat/count');
@@ -40,8 +43,13 @@ class CatAlbumWindowContainer extends Component {
       catData.push(cat.data);
     }
     
-    this.setState( () => ({ cats: catData, catCount: 7, filled: true }));
-    console.log(this.state.cats);
+    let windows = catData.map((cat) => {
+      return <CatAlbumWindow catData={cat.data} flag={cat.flag}/>;
+    });
+    // let window = <CatAlbumWindow key={this.state.cats[0].data.catID} catData={this.state.cats[0].data} flag={this.state.cats[0].flag}/>;
+    console.log(windows);
+    this.setState( () => ({ cats: catData, catCount: 7, filled: true, windows: windows}));
+    
   }
 
   // render as many components as count
@@ -49,10 +57,9 @@ class CatAlbumWindowContainer extends Component {
     if(!this.state.filled){
       this.getCats();
     }
-    const windows = this.state.cats.map((cat) => {<CatAlbumWindow catData={cat}/>});
     return (
       <div style={catStyle}>
-        {windows}
+        {this.state.windows}
       </div>
     );
   }
