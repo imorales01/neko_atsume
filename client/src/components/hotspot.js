@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PlaceDownButton from '../img/UI/place.png';
-//import PlaceHolderButton from '../img/UI/transparent.png';
 
 const hotStyle = {
   margin: "auto",

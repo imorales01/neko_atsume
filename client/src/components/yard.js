@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Background from '../img/background.jpg';
 import Menu from './menu';
 import HotSpotContainer from './hotspotcontainer';
-import CatAlbum from './cat_album';
 import MenuInterface from './menu_interface';
 import MenuButton from '../img/UI/img_menu.png';
 import CloseButton from '../img/UI/img_close.png';
@@ -50,9 +49,7 @@ class Yard extends Component {
         
       </div>
     );
-    // testing purposes:
-    //return <CatAlbum />;
-  }
-};
+  };
+}
 
 export default Yard;

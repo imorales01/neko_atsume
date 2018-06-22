@@ -43,6 +43,8 @@
 	position: relative;
 	top: 20px;
 	left: 20px;
+  height: 10%;
+	width: 10%;
 }
 
 .hotspot {
@@ -64,4 +66,16 @@
 	width: 9%;
 	padding-left: 150px;
 	padding-top: 160px;
+}
+
+.yard-button {
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+
+.title {
+	position: relative;
+	top: 20px;
+	right: 20px;
 }
