@@ -9,29 +9,48 @@ const catStyle = {
 class CatAlbumWindowContainer extends Component {
   constructor(props) {
     super(props);
-    
-        this.state = {
-          cats: []
-        };
-    
-        this.getCats = this.getCats.bind(this);
+
+    // cats is an array of all cats in database with
+    // a boolean indicating if user has collected that cat
+    // cats: [ {catData, isCollected} ]
+    // catCount: number of all cats total
+    // filled: if data about cats has already been retrieved
+    this.state = {
+      cats: [],
+      catCount: 0,
+      filled: false
+    };
+
+    this.getCats = this.getCats.bind(this);
   }
+
+  // todo : faster to do this server-side?
   async getCats(){
-    // get all cats from database
-    const response = await axios.get('api/cat');
-    this.setState( () => ({ cats: response.data }));
-    console.log(this.state.cats);
+    // get number of cats from database
+    const catCount = await axios.get('api/cat/count');
+
+    // catData: [{ }]
+    const catData = [];
+    for (let i=1; i<=count; i++){
+      // the data for the cat with id i
+      // cat IDs are enumerated from 1
+      const cat = await axios.get('api/cat/i');
+      // has the cat with id i been collected for this user
+      const isCollected = await axios.get('api/cat/collected/i');
+      catData.push(cat.data, isCollected.data);
+    }
+    
+    this.setState( () => ({ cats: catData, catCount, filled: true }));
   }
-  // i cant get components to stop overlapping or to align horizontally
-  //rendering one, for now
+
+  // render as many components as count
   render() {
-    if(!this.state.cats){
+    if(!this.state.filled){
       this.getCats();
     }
     return (
       <div style={catStyle}>
-        <CatAlbumWindow />
-
+        <CatAlbumWindow catData={this.state.cats[0]}/>
       </div>
     );
   }
