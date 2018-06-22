@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PlaceDownButton from '../img/UI/place.png';
 
-
 const catStyle = {
   paddingLeft: "150px",
   paddingTop: "160px"

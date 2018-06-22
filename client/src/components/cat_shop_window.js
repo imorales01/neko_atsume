@@ -47,7 +47,7 @@ class CatShopWindow extends Component {
   // maybe a buy button
   handleBuy(){
     //this.buy();
-    alert(this.props.catData[0].name);
+    alert(`You bought ${this.props.catData[0].name}!`);
   }
   // async buy(){
   //   const flag = await axios.get(`/api/cat/buy/${this.props.catData[0].catID}`);
