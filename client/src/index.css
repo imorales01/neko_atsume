@@ -57,3 +57,11 @@
 .hotspot:hover {
 	opacity: 100;
 }
+
+.cat {
+	margin: auto;
+	height: 15%;
+	width: 9%;
+	padding-left: 150px;
+	padding-top: 160px;
+}
