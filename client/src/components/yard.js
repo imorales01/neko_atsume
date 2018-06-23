@@ -25,28 +25,23 @@ class Yard extends Component {
     }
 
     this.handleMenuClick = this.handleMenuClick.bind(this);
-    this.showInterface = this.showInterface.bind(this);
   }
 
   handleMenuClick() {
     this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
   };
 
-  showInterface() {
-    var open = this.state.menuOpen;
-    if (open) {
-      return (
-        <MenuInterface />
-      );
-    }
-  };
-
   render() {
     return (
-      <div className='background-image' style={yardStyle}>
-        <img className='menu-button' src={this.state.menuOpen ? CloseButton : MenuButton} alt='open or close interface' onClick={this.handleMenuClick} style={{ height: '10%', width: '10%' }} />
+      <div className="background-image" style={yardStyle}>
+        <img
+          className="menu-button"
+          src={this.state.menuOpen ? CloseButton : MenuButton}
+          alt="Open or close menu"
+          onClick={this.handleMenuClick}
+          style={{ height: '10%', width: '10%' }}
+        />
         {this.state.menuOpen ? <MenuInterface /> : <HotSpotContainer />}
-
       </div>
     );
   };

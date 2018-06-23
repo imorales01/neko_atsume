@@ -11,8 +11,20 @@ class HotSpotContainer extends Component {
   render() {
     return (
       <div style={{ height: '63%' }}>
-        <HotSpot style={hotStyle} paddingLeft={'75px'} paddingTop={'220px'} paddingLeftCat={'160px'} paddingTopCat={'200px'} />
-        <HotSpot style={hotStyle} paddingLeft={'520px'} paddingTop={'0px'} paddingLeftCat={'600px'} paddingTopCat={'0px'} />
+        <HotSpot
+          style={hotStyle}
+          paddingLeft="75px"
+          paddingTop="220px"
+          paddingLeftCat="160px"
+          paddingTopCat="200px"
+        />
+        <HotSpot
+          style={hotStyle}
+          paddingLeft="520px"
+          paddingTop="0px"
+          paddingLeftCat="600px"
+          paddingTopCat="0px"
+        />
       </div>
     );
   }

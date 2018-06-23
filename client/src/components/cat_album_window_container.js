@@ -56,7 +56,7 @@ class CatAlbumWindowContainer extends Component {
     // right now this relies on the falsiness of page 0 and truthiness of page 1
     // todo : change that in the future
     return (
-      <div className='window-container'>
+      <div className="window-container">
         {this.props.page ? this.state.windows.slice(4) : this.state.windows.slice(0, 4)}
       </div>
     );

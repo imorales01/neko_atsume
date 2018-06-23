@@ -34,26 +34,35 @@ class CatShop extends Component {
 
       <div style={shopStyle}>
 
-        <Link to='/'>
-          <img className='yard-button' src={YardButton} alt='yard button' style={{ height: '10%', weight: '10%' }} />
+        <Link to="/">
+          <img
+            className="yard-button"
+            src={YardButton}
+            alt="yard button"
+            style={{ height: '10%', weight: '10%' }}
+          />
         </Link>
 
-        <img src={Title} className='title' />
+        <img src={Title} className="title" />
 
-        {this.state.page === 0 ? null : <img
-          src={arrowLeft}
-          className='arrow-left'
-          onClick={this.handleClickLeft}
-        />
+        {(this.state.page === 0)
+            ? null
+            : <img
+                src={arrowLeft}
+                className="arrow-left"
+                onClick={this.handleClickLeft}
+              />
         }
 
         <CatShopWindowContainer page={this.state.page} />
 
-        {this.state.page === 1 ? null : <img
-          src={arrowRight}
-          className='arrow-right'
-          onClick={this.handleClickRight}
-        />
+        {(this.state.page === 1)
+            ? null
+            : <img
+                src={arrowRight}
+                className="arrow-right"
+                onClick={this.handleClickRight}
+              />
         }
       </div>
     );

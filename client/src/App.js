@@ -4,7 +4,7 @@ import Yard from './components/yard';
 class App extends Component {
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <Yard />
       </div>
     );

@@ -13,11 +13,11 @@ ReactDOM.render(
   <BrowserRouter>
     <div>
       <Switch>
-        <Route path='/cat_album_window_container' component={CatAlbumWindowContainer} />
-        <Route path='/cat_album_window' component={CatAlbumWindow} />
-        <Route path='/cat_shop' component={CatShop} />
-        <Route path='/cat_album' component={CatAlbum} />
-        <Route path='/' component={App} />
+        <Route path="/cat_album_window_container" component={CatAlbumWindowContainer} />
+        <Route path="/cat_album_window" component={CatAlbumWindow} />
+        <Route path="/cat_shop" component={CatShop} />
+        <Route path="/cat_album" component={CatAlbum} />
+        <Route path="/" component={App} />
       </Switch>
     </div>
   </BrowserRouter>

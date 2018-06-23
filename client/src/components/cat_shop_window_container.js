@@ -42,7 +42,6 @@ class CatShopWindowContainer extends Component {
     let windows = catData.map((cat) => {
       return <CatShopWindow catData={cat.data} hasCollected={cat.hasCollected} />;
     });
-    console.log(windows);
     this.setState(() => ({ cats: catData, catCount: 7, filled: true, windows: windows }));
 
   }
@@ -55,7 +54,7 @@ class CatShopWindowContainer extends Component {
     // right now this relies on the falsiness of page 0 and truthiness of page 1
     // todo : change that in the future
     return (
-      <div className='window-container'>
+      <div className="window-container">
         {this.props.page ? this.state.windows.slice(4) : this.state.windows.slice(0, 4)}
       </div>
     );

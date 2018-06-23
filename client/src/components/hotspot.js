@@ -24,6 +24,7 @@ class HotSpot extends Component {
     };
     this.onClick = this.onClick.bind(this);
   }
+  // todo: dont hard code this
   onClick() {
     const randNum = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
     const randNum2 = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
@@ -34,8 +35,20 @@ class HotSpot extends Component {
   render() {
     return (
       <div>
-        {this.state.isEmpty ? <img src={PlaceDownButton} onClick={this.onClick} className='hotspot' style={this.state.hotStyle} /> :
-          <img src={require(`../img/cats/${this.state.namePath}/${this.state.randNum}.gif`)} className='cat' style={this.state.catStyle} onClick={this.onClick} />}
+        {(this.state.isEmpty)
+            ? <img
+                src={PlaceDownButton}
+                onClick={this.onClick}
+                className="hotspot"
+                style={this.state.hotStyle}
+              />
+            : <img
+                src={require(`../img/cats/${this.state.namePath}/${this.state.randNum}.gif`)}
+                className="cat"
+                style={this.state.catStyle}
+                onClick={this.onClick}
+              />
+        }
       </div>
     );
   }

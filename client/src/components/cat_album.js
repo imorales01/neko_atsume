@@ -33,14 +33,19 @@ class CatAlbum extends Component {
 		return (
 			<div style={catStyle}>
 
-				<Link to='/'>
-					<img className='yard-button' src={YardButton} alt='yard button' style={{ height: '10%', weight: '10%' }} />
+				<Link to="/">
+          <img
+            className="yard-button"
+            src={YardButton}
+            alt="yard button"
+            style={{ height: '10%', weight: '10%' }}
+          />
 				</Link>
 
-				<img src={Title} className='title' />
+				<img src={Title} className="title" />
 				{this.state.page === 0 ? null : <img
 					src={arrowLeft}
-					className='arrow-left'					
+					className="arrow-left"					
 					onClick={this.handleClickLeft}
 				/>
 				}
@@ -49,7 +54,7 @@ class CatAlbum extends Component {
 
 				{this.state.page === 1 ? null : <img
 					src={arrowRight}
-					className='arrow-right'					
+					className="arrow-right"					
 					onClick={this.handleClickRight}
 				/>
 				}
