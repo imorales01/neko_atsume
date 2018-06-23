@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PlaceDownButton from '../img/UI/place.png';
 
 const catStyle = {
-  paddingLeft: "150px",
-  paddingTop: "160px"
+  paddingLeft: '150px',
+  paddingTop: '160px'
 }
 
 class HotSpot extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       isEmpty: true,
@@ -24,7 +24,7 @@ class HotSpot extends Component {
     };
     this.onClick = this.onClick.bind(this);
   }
-  onClick(){
+  onClick() {
     const randNum = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
     const randNum2 = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
     const names = ['Willie', 'Shadow', 'Peaches', 'Rascal'];
@@ -34,8 +34,8 @@ class HotSpot extends Component {
   render() {
     return (
       <div>
-          { this.state.isEmpty ? <img src={PlaceDownButton} onClick={this.onClick} className='hotspot' style={this.state.hotStyle}/> :
-            <img src={require(`../img/cats/${this.state.namePath}/${this.state.randNum}.gif`)} className='cat' style={this.state.catStyle}/>} 
+        {this.state.isEmpty ? <img src={PlaceDownButton} onClick={this.onClick} className='hotspot' style={this.state.hotStyle} /> :
+          <img src={require(`../img/cats/${this.state.namePath}/${this.state.randNum}.gif`)} className='cat' style={this.state.catStyle} onClick={this.onClick} />}
       </div>
     );
   }

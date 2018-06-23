@@ -19,7 +19,7 @@ const User = mongoose.model('User');
 const Cat = mongoose.model('Cat');
 
 //test data
-const userID = "5b2be22e1218433991453955";
+const userID = '5b2be22e1218433991453955';
 
 // initial call from login sets user id
 // app.get('api/user/:id'), (req, res) => {
@@ -60,9 +60,9 @@ app.get('/api/cat/:id', async (req, res) => {
 		}
 	}
 	// set date for testing purposes
-		date = "01/10/2018";
-	const obj = { data, date }; 
-    res.send(obj);
+	date = '01/10/2018';
+	const obj = { data, date };
+	res.send(obj);
 });
 
 app.get('/api/cat/shop/:id', async (req, res) => {
@@ -76,8 +76,8 @@ app.get('/api/cat/shop/:id', async (req, res) => {
 	}
 	// set flag for testing purposes
 	//	flag = true;
-	const obj = { data, flag }; 
-    res.send(obj);
+	const obj = { data, flag };
+	res.send(obj);
 });
 
 

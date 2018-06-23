@@ -12,50 +12,50 @@ const windowStyle = {
 };
 
 const iconStyle = {
-  height: "30%",
-  position: "relative",
-  top: "30%",
-  margin: "auto"
+  height: '30%',
+  position: 'relative',
+  top: '30%',
+  margin: 'auto'
 };
 
 const nameStyle = {
-  position: "relative",
-  top: "16%",
-  fontFamily: "arial",
-  textAlign: "center",
-  height: "70%"
+  position: 'relative',
+  top: '16%',
+  fontFamily: 'arial',
+  textAlign: 'center',
+  height: '70%'
 };
 
 const dateStyle = {
-  position: "relative",
-  fontFamily: "arial",
-  textAlign: "center",
-  top: "8%"
+  position: 'relative',
+  fontFamily: 'arial',
+  textAlign: 'center',
+  top: '8%'
 };
 
 class CatAlbumWindow extends Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
     let namePath = this.props.catData[0].name;
     // todo : dont hardcode this lol 
-    if (namePath === 'Sassy Fran'){
-      namePath = 'Sassy_Fran';   
+    if (namePath === 'Sassy Fran') {
+      namePath = 'Sassy_Fran';
     }
-    else if (namePath === 'Saint Purrtrick'){
-      namePath = 'Saint_Purrtrick';   
+    else if (namePath === 'Saint Purrtrick') {
+      namePath = 'Saint_Purrtrick';
     }
     return (
       <div style={windowStyle}>
         <div style={nameStyle}>
-          {this.props.date ? this.props.catData[0].name : "? ? ? ?" } 
+          {this.props.date ? this.props.catData[0].name : '? ? ? ?'}
           <br />
           <img src={this.props.date ? require(`../img/cats/${namePath}/icon.png`) : require(`../img/cats/unknown_icon.png`)} style={iconStyle} />
         </div>
         <div style={dateStyle}>
-          {this.props.date ? this.props.date : "--/--/----" } 
+          {this.props.date ? this.props.date : '--/--/----'}
         </div>
       </div>
     );

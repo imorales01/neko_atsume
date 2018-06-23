@@ -1,6 +1,6 @@
 'use strict';
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const createCats = require('./createcats')
 
@@ -9,10 +9,10 @@ const db = require('./config').url;
 
 // // Connect to MongoDB
 mongoose
-    .connect(db)
-    .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.log(err));
-    
+  .connect(db)
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
+
 const User = mongoose.model('User');
 const Cat = mongoose.model('Cat');
 

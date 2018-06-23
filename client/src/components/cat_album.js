@@ -14,16 +14,16 @@ const catStyle = {
 };
 
 const leftArrowStyle = {
-	height: "8%",
-	position: "absolute",
-	left: "0",
-	top: "40%"
+	height: '8%',
+	position: 'absolute',
+	left: '0',
+	top: '40%'
 };
 
 const rightArrowStyle = {
-	height: "8%",
-	position: "absolute",
-	right: "0"
+	height: '8%',
+	position: 'absolute',
+	right: '0'
 };
 
 class CatAlbum extends Component {
@@ -36,35 +36,35 @@ class CatAlbum extends Component {
 		this.handleClickRight = this.handleClickRight.bind(this);
 	}
 	// todo : handle multiple pages and compress into one function
-	handleClickRight(){
+	handleClickRight() {
 		this.setState(() => ({ page: 1 }));
 	}
-	handleClickLeft(){
+	handleClickLeft() {
 		this.setState(() => ({ page: 0 }));
 	}
 	render() {
 		return (
 			<div style={catStyle}>
 
-				<Link to="/">
-            <img className="yard-button" src={YardButton} alt='yard button' style={{ height: "10%", weight: "10%" }} />
-      	</Link>
+				<Link to='/'>
+					<img className='yard-button' src={YardButton} alt='yard button' style={{ height: '10%', weight: '10%' }} />
+				</Link>
 
 				<img src={Title} className='title' />
-				{this.state.page===0 ? null : <img
-					src={ arrowLeft }
-					style={ leftArrowStyle }
-					onClick={ this.handleClickLeft }
-					/>
+				{this.state.page === 0 ? null : <img
+					src={arrowLeft}
+					style={leftArrowStyle}
+					onClick={this.handleClickLeft}
+				/>
 				}
 
 				<AlbumWindowContainer page={this.state.page} />
-				
-				{this.state.page===1 ? null : <img
-					src={ arrowRight }
-					style={ rightArrowStyle }
-					onClick={ this.handleClickRight }
-					/>
+
+				{this.state.page === 1 ? null : <img
+					src={arrowRight}
+					style={rightArrowStyle}
+					onClick={this.handleClickRight}
+				/>
 				}
 			</div>
 		);

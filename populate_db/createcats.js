@@ -9,7 +9,7 @@ module.exports = (Cat) => {
     }
   });
 
-  Cat.create({ catID: 3, name: 'Rascal', description: { appearance: 'Grey Tuxedo', powerLevel: '140', personality: 'Selfish' }, special: false}, function (err) {
+  Cat.create({ catID: 3, name: 'Rascal', description: { appearance: 'Grey Tuxedo', powerLevel: '140', personality: 'Selfish' }, special: false }, function (err) {
     if (err) {
       console.log('Error creating cat');
     }

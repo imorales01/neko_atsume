@@ -17,7 +17,7 @@ const yardStyle = {
 };
 
 class Yard extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -34,9 +34,9 @@ class Yard extends Component {
 
   showInterface() {
     var open = this.state.menuOpen;
-    if(open) {
+    if (open) {
       return (
-          <MenuInterface />
+        <MenuInterface />
       );
     }
   };
@@ -44,9 +44,9 @@ class Yard extends Component {
   render() {
     return (
       <div className='background-image' style={yardStyle}>
-      <img className='menu-button' src={ this.state.menuOpen ? CloseButton : MenuButton } alt='open or close interface' onClick={this.handleMenuClick} style={{ height: "10%", width: "10%" }} />
-      { this.state.menuOpen ? <MenuInterface /> : <HotSpotContainer /> }
-        
+        <img className='menu-button' src={this.state.menuOpen ? CloseButton : MenuButton} alt='open or close interface' onClick={this.handleMenuClick} style={{ height: '10%', width: '10%' }} />
+        {this.state.menuOpen ? <MenuInterface /> : <HotSpotContainer />}
+
       </div>
     );
   };

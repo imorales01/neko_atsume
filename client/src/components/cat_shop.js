@@ -10,67 +10,67 @@ import arrowRight from '../img/UI/arrow_right.png';
 
 
 const shopStyle = {
-	backgroundImage: `url(${Background})`,
-	backgroundPosition: 'center',
+  backgroundImage: `url(${Background})`,
+  backgroundPosition: 'center',
 };
 
 const leftArrowStyle = {
-	height: "8%",
-	position: "absolute",
-	left: "0",
-	top: "40%"
+  height: '8%',
+  position: 'absolute',
+  left: '0',
+  top: '40%'
 };
 
 const rightArrowStyle = {
-	height: "8%",
-	position: "absolute",
-	right: "0"
+  height: '8%',
+  position: 'absolute',
+  right: '0'
 };
 
 class CatShop extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			page: 0
-		}
-		this.handleClickLeft = this.handleClickLeft.bind(this);
-		this.handleClickRight = this.handleClickRight.bind(this);
-	}
-	// todo : handle multiple pages and compress into one function
-	handleClickRight(){
-		this.setState(() => ({ page: 1 }));
-	}
-	handleClickLeft(){
-		this.setState(() => ({ page: 0 }));
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 0
+    }
+    this.handleClickLeft = this.handleClickLeft.bind(this);
+    this.handleClickRight = this.handleClickRight.bind(this);
   }
-	render() {
-		return (
+  // todo : handle multiple pages and compress into one function
+  handleClickRight() {
+    this.setState(() => ({ page: 1 }));
+  }
+  handleClickLeft() {
+    this.setState(() => ({ page: 0 }));
+  }
+  render() {
+    return (
 
-			<div style={shopStyle}>
-				
-				<Link to="/">
-            <img className="yard-button" src={YardButton} alt='yard button' style={{ height: "10%", weight: "10%" }} />
-      	</Link>
+      <div style={shopStyle}>
 
-				<img src={Title} className='title' />
-				
-				{this.state.page===0 ? null : <img
-					src={ arrowLeft }
-					style={ leftArrowStyle }
-					onClick={ this.handleClickLeft }
-					/>
-				}
+        <Link to='/'>
+          <img className='yard-button' src={YardButton} alt='yard button' style={{ height: '10%', weight: '10%' }} />
+        </Link>
 
-				<CatShopWindowContainer page={ this.state.page } />
-				
-				{this.state.page===1 ? null : <img
-					src={ arrowRight }
-					style={ rightArrowStyle }
-					onClick={ this.handleClickRight }
-					/>
-				}
-			</div>
-		);
-	}
+        <img src={Title} className='title' />
+
+        {this.state.page === 0 ? null : <img
+          src={arrowLeft}
+          style={leftArrowStyle}
+          onClick={this.handleClickLeft}
+        />
+        }
+
+        <CatShopWindowContainer page={this.state.page} />
+
+        {this.state.page === 1 ? null : <img
+          src={arrowRight}
+          style={rightArrowStyle}
+          onClick={this.handleClickRight}
+        />
+        }
+      </div>
+    );
+  }
 };
 export default CatShop;

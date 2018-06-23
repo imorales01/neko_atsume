@@ -21,9 +21,9 @@ class Menu extends Component {
 
   showInterface() {
     var open = this.state.menuOpen;
-    if(open) {
+    if (open) {
       return (
-          <MenuInterface />
+        <MenuInterface />
       );
     }
   };
@@ -34,7 +34,7 @@ class Menu extends Component {
     return (
       <div>
         <img className='menu-button' src={this.state.menuOpen ? CloseButton : MenuButton} alt='open or close interface' onClick={this.handleClick} style={{ height: "10%", width: "10%" }} />
-          {this.showInterface()}
+        {this.showInterface()}
       </div>
     );
   };
