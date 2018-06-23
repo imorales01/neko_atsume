@@ -21,21 +21,37 @@ class MenuInterface extends Component {
       <table className="interface-container">
 
         <Link to="/cat_album">
-          <img src={CatsButton} alt="cats button" className="button" />
+          <img
+            src={CatsButton}
+            alt="Button to go to Cat Album"
+            className="button"
+          />
         </Link>
 
         <Link to="/cat_shop">
-          <img src={ShopButton} alt="shop button" className="button" />
+          <img
+            src={ShopButton}
+            alt="Button to go to Cat Shop"
+            className="button"
+          />
         </Link>
 
         <br />
 
         <Link to="/">
-          <img src={YardButton} alt="yard button" className="button" />
+          <img
+            src={YardButton}
+            alt="Button to go to yard"
+            className="button"
+          />
         </Link>
 
         <Link to="/">
-          <img src={SettingsButton} alt="settings button" className="button" />
+          <img
+            src={SettingsButton}
+            alt="Button to go to settings" 
+            lassName="button"
+          />
         </Link>
 
       </table>

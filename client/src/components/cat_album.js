@@ -37,14 +37,15 @@ class CatAlbum extends Component {
           <img
             className="yard-button"
             src={YardButton}
-            alt="yard button"
+            alt="Button to go to yard"
             style={{ height: '10%', weight: '10%' }}
           />
 				</Link>
 
 				<img src={Title} className="title" />
 				{this.state.page === 0 ? null : <img
-					src={arrowLeft}
+          src={arrowLeft}
+          alt="Left arrow to go back a page"
 					className="arrow-left"					
 					onClick={this.handleClickLeft}
 				/>
@@ -53,7 +54,8 @@ class CatAlbum extends Component {
 				<AlbumWindowContainer page={this.state.page} />
 
 				{this.state.page === 1 ? null : <img
-					src={arrowRight}
+          src={arrowRight}
+          alt="Right arrow to go forward a page"
 					className="arrow-right"					
 					onClick={this.handleClickRight}
 				/>

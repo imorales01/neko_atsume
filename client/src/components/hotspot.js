@@ -38,12 +38,14 @@ class HotSpot extends Component {
         {(this.state.isEmpty)
             ? <img
                 src={PlaceDownButton}
+                alt="Circle that shows you can click to place a cat"
                 onClick={this.onClick}
                 className="hotspot"
                 style={this.state.hotStyle}
               />
             : <img
                 src={require(`../img/cats/${this.state.namePath}/${this.state.randNum}.gif`)}
+                alt={`A picture of ${namePath}`}
                 className="cat"
                 style={this.state.catStyle}
                 onClick={this.onClick}

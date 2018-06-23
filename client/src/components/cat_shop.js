@@ -36,19 +36,24 @@ class CatShop extends Component {
 
         <Link to="/">
           <img
-            className="yard-button"
             src={YardButton}
-            alt="yard button"
+            alt="Button to go to yard"
+            className="yard-button"
             style={{ height: '10%', weight: '10%' }}
           />
         </Link>
 
-        <img src={Title} className="title" />
+        <img
+          src={Title}
+          alt="Cat Shop title"
+          className="title"
+        />
 
         {(this.state.page === 0)
             ? null
             : <img
                 src={arrowLeft}
+                alt="Left arrow to go back a page"
                 className="arrow-left"
                 onClick={this.handleClickLeft}
               />
@@ -60,6 +65,7 @@ class CatShop extends Component {
             ? null
             : <img
                 src={arrowRight}
+                alt="Right arrow to go forward a page"
                 className="arrow-right"
                 onClick={this.handleClickRight}
               />

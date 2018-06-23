@@ -52,7 +52,11 @@ class CatShopWindow extends Component {
       <div className="name" style={{ top: '11%' }}>
           {this.props.catData[0].name}
           <br />
-          <img src={require(`../img/cats/${namePath}/icon.png`)} className="icon" />
+          <img
+            src={require(`../img/cats/${namePath}/icon.png`)}
+            alt={`Icon of ${namePath}'s face`}
+            className="icon"
+          />
         </div>
         <div style={priceStyle}>
           100
