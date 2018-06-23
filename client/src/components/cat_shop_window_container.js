@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import CatShopWindow from './cat_shop_window';
 import axios from 'axios';
 
-const shopStyle = {
-  height: '30%',
-  margin: 'auto',
-  width: '50%',
-  position: 'relative'
-};
-
 class CatShopWindowContainer extends Component {
   constructor(props) {
     super(props);
@@ -62,7 +55,7 @@ class CatShopWindowContainer extends Component {
     // right now this relies on the falsiness of page 0 and truthiness of page 1
     // todo : change that in the future
     return (
-      <div style={shopStyle}>
+      <div className='window-container'>
         {this.props.page ? this.state.windows.slice(4) : this.state.windows.slice(0, 4)}
       </div>
     );

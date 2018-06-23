@@ -11,21 +11,6 @@ const windowStyle = {
   width: '230px'
 };
 
-const iconStyle = {
-  height: '30%',
-  position: 'relative',
-  top: '30%',
-  margin: 'auto'
-};
-
-const nameStyle = {
-  position: 'relative',
-  top: '16%',
-  fontFamily: 'arial',
-  textAlign: 'center',
-  height: '70%'
-};
-
 const dateStyle = {
   position: 'relative',
   fontFamily: 'arial',
@@ -49,10 +34,10 @@ class CatAlbumWindow extends Component {
     }
     return (
       <div style={windowStyle}>
-        <div style={nameStyle}>
+        <div className='name' style={{ top: '16%' }}>
           {this.props.date ? this.props.catData[0].name : '? ? ? ?'}
           <br />
-          <img src={this.props.date ? require(`../img/cats/${namePath}/icon.png`) : require(`../img/cats/unknown_icon.png`)} style={iconStyle} />
+          <img src={this.props.date ? require(`../img/cats/${namePath}/icon.png`) : require(`../img/cats/unknown_icon.png`)} className='icon' />
         </div>
         <div style={dateStyle}>
           {this.props.date ? this.props.date : '--/--/----'}

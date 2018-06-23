@@ -13,19 +13,6 @@ const catStyle = {
 	backgroundPosition: 'center',
 };
 
-const leftArrowStyle = {
-	height: '8%',
-	position: 'absolute',
-	left: '0',
-	top: '40%'
-};
-
-const rightArrowStyle = {
-	height: '8%',
-	position: 'absolute',
-	right: '0'
-};
-
 class CatAlbum extends Component {
 	constructor(props) {
 		super(props);
@@ -53,7 +40,7 @@ class CatAlbum extends Component {
 				<img src={Title} className='title' />
 				{this.state.page === 0 ? null : <img
 					src={arrowLeft}
-					style={leftArrowStyle}
+					className='arrow-left'					
 					onClick={this.handleClickLeft}
 				/>
 				}
@@ -62,7 +49,7 @@ class CatAlbum extends Component {
 
 				{this.state.page === 1 ? null : <img
 					src={arrowRight}
-					style={rightArrowStyle}
+					className='arrow-right'					
 					onClick={this.handleClickRight}
 				/>
 				}

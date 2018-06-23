@@ -33,7 +33,7 @@ class Menu extends Component {
     //render menu interface if menu is open
     return (
       <div>
-        <img className='menu-button' src={this.state.menuOpen ? CloseButton : MenuButton} alt='open or close interface' onClick={this.handleClick} style={{ height: "10%", width: "10%" }} />
+        <img className='menu-button' src={this.state.menuOpen ? CloseButton : MenuButton} alt='open or close interface' onClick={this.handleClick} style={{ height: '10%', width: '10%' }} />
         {this.showInterface()}
       </div>
     );

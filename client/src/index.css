@@ -4,6 +4,18 @@
 	height: 100%;
 }
 
+.arrow-left {
+  height: 8%;
+  left: 0;
+  position: absolute;
+  top: 40%;
+}
+
+.arrow-right {
+  height: 8%;
+  position: absolute;
+  right: 0;
+}
 
 .button {
 	height: 35%;
@@ -14,11 +26,35 @@
 	padding-bottom: 15px;
 }
 
+.cat {
+	margin: auto;
+	height: 18%;
+	width: 11%;
+}
+
 .clickable {
 	background-color: transparent;
 	border-color: transparent;
 	height: 10%;
 	width: 5%;
+}
+
+.hotspot {
+	margin: auto;
+	height: 20%;
+	width: 20%;
+	opacity: 0;
+}
+
+.hotspot:hover {
+	opacity: 100;
+}
+
+.icon {
+  height: 30%;
+  margin: auto;
+  position: relative;
+  top: 30%;
 }
 
 .interface-container {
@@ -33,12 +69,6 @@
 	top: 24%;
 }
 
-.title {
-	float: right;
-	height: 10%;
-
-}
-
 .menu-button {
 	position: relative;
 	top: 20px;
@@ -47,31 +77,27 @@
 	width: 10%;
 }
 
-.hotspot {
-	margin: auto;
-	height: 20%;
-	width: 20%;
-	opacity: 0;
+.name {
+  height: 70%;
+  font-family: arial;
+  position: relative;
+  text-align: center;
 }
 
-.hotspot:hover {
-	opacity: 100;
+.title {
+	float: right;
+	height: 10%;
 }
 
-.cat {
-	margin: auto;
-	height: 18%;
-	width: 11%;
+.window-container {
+  height: 20%;
+  margin: auto;
+  position: relative;
+  width: 50%;
 }
 
 .yard-button {
 	position: relative;
 	top: 20px;
 	left: 20px;
-}
-
-.title {
-	position: relative;
-	top: 20px;
-	right: 20px;
 }

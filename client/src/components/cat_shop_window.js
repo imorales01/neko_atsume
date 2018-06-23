@@ -12,21 +12,6 @@ const windowStyle = {
   width: '230px'
 };
 
-const iconStyle = {
-  height: '30%',
-  position: 'relative',
-  top: '30%',
-  margin: 'auto'
-};
-
-const nameStyle = {
-  position: 'relative',
-  top: '11%',
-  fontFamily: 'arial',
-  textAlign: 'center',
-  height: '70%'
-};
-
 const priceStyle = {
   position: 'relative',
   fontFamily: 'arial',
@@ -64,10 +49,10 @@ class CatShopWindow extends Component {
     }
     return (
       <div style={windowStyle} onClick={this.handleBuy}>
-        <div style={nameStyle}>
+      <div className='name' style={{ top: '11%' }}>
           {this.props.catData[0].name}
           <br />
-          <img src={require(`../img/cats/${namePath}/icon.png`)} style={iconStyle} />
+          <img src={require(`../img/cats/${namePath}/icon.png`)} className='icon' />
         </div>
         <div style={priceStyle}>
           100

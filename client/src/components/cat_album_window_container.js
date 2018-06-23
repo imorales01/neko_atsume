@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import CatAlbumWindow from './cat_album_window';
 
-const catStyle = {
-  height: '20%',
-  margin: 'auto',
-  width: '50%',
-  position: 'relative'
-};
-
 class CatAlbumWindowContainer extends Component {
   constructor(props) {
     super(props);
@@ -63,7 +56,7 @@ class CatAlbumWindowContainer extends Component {
     // right now this relies on the falsiness of page 0 and truthiness of page 1
     // todo : change that in the future
     return (
-      <div style={catStyle}>
+      <div className='window-container'>
         {this.props.page ? this.state.windows.slice(4) : this.state.windows.slice(0, 4)}
       </div>
     );

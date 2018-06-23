@@ -8,23 +8,9 @@ import MenuButton from '../img/UI/img_menu.png';
 import arrowLeft from '../img/UI/arrow_left.png';
 import arrowRight from '../img/UI/arrow_right.png';
 
-
 const shopStyle = {
   backgroundImage: `url(${Background})`,
   backgroundPosition: 'center',
-};
-
-const leftArrowStyle = {
-  height: '8%',
-  position: 'absolute',
-  left: '0',
-  top: '40%'
-};
-
-const rightArrowStyle = {
-  height: '8%',
-  position: 'absolute',
-  right: '0'
 };
 
 class CatShop extends Component {
@@ -56,7 +42,7 @@ class CatShop extends Component {
 
         {this.state.page === 0 ? null : <img
           src={arrowLeft}
-          style={leftArrowStyle}
+          className='arrow-left'
           onClick={this.handleClickLeft}
         />
         }
@@ -65,7 +51,7 @@ class CatShop extends Component {
 
         {this.state.page === 1 ? null : <img
           src={arrowRight}
-          style={rightArrowStyle}
+          className='arrow-right'
           onClick={this.handleClickRight}
         />
         }
