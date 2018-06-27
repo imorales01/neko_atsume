@@ -24,7 +24,9 @@ class CatAlbumWindowContainer extends Component {
     this.getCats = this.getCats.bind(this);
   }
 
+  // load state with all cats from database and if user has collected the cat
   async getCats() {
+    // FIXME: this
     // get number of cats from database
     // const count = await axios.get('/api/cat/count');
     // console.log(count.data);
@@ -35,17 +37,14 @@ class CatAlbumWindowContainer extends Component {
       // the data for the cat with id i
       // cat IDs are enumerated from 1
       const cat = await axios.get(`api/cat/${i}`);
-
       catData.push(cat.data);
     }
 
     let windows = catData.map((cat) => {
       return <CatAlbumWindow catData={cat.data} date={cat.date} />;
     });
-    // let window = <CatAlbumWindow key={this.state.cats[0].data.catID} catData={this.state.cats[0].data} flag={this.state.cats[0].flag}/>;
-    console.log(windows);
-    this.setState(() => ({ cats: catData, catCount: 7, filled: true, windows: windows }));
 
+    this.setState(() => ({ cats: catData, catCount: 7, filled: true, windows: windows }));
   }
 
   // render as many components as count
@@ -53,8 +52,9 @@ class CatAlbumWindowContainer extends Component {
     if (!this.state.filled) {
       this.getCats();
     }
+
     // right now this relies on the falsiness of page 0 and truthiness of page 1
-    // todo : change that in the future
+    // FIXME: change that in the future
     return (
       <div className="window-container">
         {this.props.page ? this.state.windows.slice(4) : this.state.windows.slice(0, 4)}

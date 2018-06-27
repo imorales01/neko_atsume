@@ -9,6 +9,7 @@ const hotStyle = {
 
 class HotSpotContainer extends Component {
   render() {
+    // TODO: px -> % and add more hot spots
     return (
       <div style={{ height: '63%' }}>
         <HotSpot

@@ -12,6 +12,7 @@ class MenuInterface extends Component {
   };
 
   render() {
+    // TODO: refactor routing, maybe
     //render buttons on menu
     // CatsButton -> Cats Collection
     // ShopButton -> Shop

@@ -25,13 +25,14 @@ class CatAlbumWindow extends Component {
 
   render() {
     let namePath = this.props.catData[0].name;
-    // todo : dont hardcode this lol 
+    // FIXME: dont hardcode this lol 
     if (namePath === 'Sassy Fran') {
       namePath = 'Sassy_Fran';
     }
     else if (namePath === 'Saint Purrtrick') {
       namePath = 'Saint_Purrtrick';
     }
+
     return (
       <div style={windowStyle}>
         <div className="name" style={{ top: '16%' }}>

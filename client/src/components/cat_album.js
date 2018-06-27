@@ -22,7 +22,7 @@ class CatAlbum extends Component {
 		this.handleClickLeft = this.handleClickLeft.bind(this);
 		this.handleClickRight = this.handleClickRight.bind(this);
 	}
-	// todo : handle multiple pages and compress into one function
+	// TODO: handle multiple pages and compress into one function
 	handleClickRight() {
 		this.setState(() => ({ page: 1 }));
 	}

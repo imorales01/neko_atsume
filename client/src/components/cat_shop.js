@@ -29,6 +29,7 @@ class CatShop extends Component {
   handleClickLeft() {
     this.setState(() => ({ page: 0 }));
   }
+  // TODO: refactor routing, maybe
   render() {
     return (
 

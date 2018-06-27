@@ -27,7 +27,7 @@ class CatShopWindow extends Component {
     //this.buy = this.buy.bind(this);    
   }
 
-  // ok actually handle the buy
+  // TODO: ok actually handle the buy
   // add stamps on already bought items
   // maybe a buy button
   handleBuy() {
@@ -40,7 +40,7 @@ class CatShopWindow extends Component {
 
   render() {
     let namePath = this.props.catData[0].name;
-    // todo : dont hardcode this lol 
+    // FIXME: dont hardcode this lol 
     if (namePath === 'Sassy Fran') {
       namePath = 'Sassy_Fran';
     }
