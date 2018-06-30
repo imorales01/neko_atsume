@@ -47,6 +47,7 @@ class HotSpotContainer extends Component {
               top: '8%',
               zIndex: '2'
             }}
+            number='1'
           />
         </div>
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
@@ -63,6 +64,7 @@ class HotSpotContainer extends Component {
               top: '36%',
               zIndex: '1'
             }}
+            number='2'
           />
         </div>
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
@@ -79,6 +81,7 @@ class HotSpotContainer extends Component {
               top: '45%',
               zIndex: '3'
             }}
+            number='3'
           />
         </div>
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
@@ -95,6 +98,7 @@ class HotSpotContainer extends Component {
               top: '23%',
               zIndex: '4'
             }}
+            number='4'
           />
         </div>
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
@@ -111,6 +115,7 @@ class HotSpotContainer extends Component {
               bottom: '7%',
               zIndex: '5'
             }}
+            number='5'
           />
         </div>
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
@@ -127,6 +132,7 @@ class HotSpotContainer extends Component {
               top: '55%',
               zIndex: '6'
             }}
+            number='6'
           />
         </div>
       </div>

@@ -49,11 +49,10 @@ class HotSpot extends Component {
         {(this.state.isEmpty)
             ? <img
                 src={PlaceDownButton}
-                alt="Circle that shows you can click to place a cat"
+                alt={`Circle that shows you can click to place a cat, hotspot number ${this.props.number}`}
                 onClick={this.onClick}
                 className="hotspot"
                 style={this.state.hotStyle}
-                
               />
             : 
             <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
