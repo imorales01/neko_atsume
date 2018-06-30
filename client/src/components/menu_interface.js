@@ -13,7 +13,9 @@ class MenuInterface extends Component {
   };
 
   render() {
-    // TODO: refactor routing, maybe
+    // TODO: refactor routing, maybe, and style buttons a little more
+    // Make "go to yard" actually go to yard
+
     //render buttons on menu
     // CatsButton -> Cats Collection
     // ShopButton -> Shop
@@ -24,9 +26,8 @@ class MenuInterface extends Component {
         <img
           className="menu-button"
           src={CloseButton}
-          alt="Open or close menu"
+          alt="Close menu"
           onClick={this.props.handleMenuClick}
-          style={{ height: '10%', width: '10%' }}
         />
         <table className="interface-container">
 
@@ -60,7 +61,7 @@ class MenuInterface extends Component {
             <img
               src={SettingsButton}
               alt="Button to go to settings" 
-              lassName="button"
+              className="button"
             />
           </Link>
 

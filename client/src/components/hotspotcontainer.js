@@ -20,17 +20,15 @@ class HotSpotContainer extends Component {
   };
 
   render() {
-    // TODO: px -> % and add more hot spots
     return (
-      <div style={{ height: '100%' }}>
+      <div style={{ height: '100%' , width: '100%' }}>
 
-        <div style={{ position: 'absolute' }}>
+        <div style={{ position: 'absolute', zIndex: '100' }}>
           <img
             className="menu-button"
             src={this.state.menuOpen ? null : MenuButton}
-            alt="Open or close menu"
+            alt="Open menu"
             onClick={this.handleMenuClick}
-            style={{ height: '10%', width: '10%' }}
           />
         </div>
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
