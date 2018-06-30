@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import HotSpot from './hotspot';
 import MenuButton from '../img/UI/img_menu.png';
 
-const hotStyle = {
-  height: '20%',
-  width: '20%',
-  paddingLeft: '20px'
-}
 
 class HotSpotContainer extends Component {
   constructor(props) {
@@ -36,7 +31,6 @@ class HotSpotContainer extends Component {
           style={{ height: '10%', width: '10%' }}
         />
         <HotSpot
-          style={hotStyle}
           paddingLeft="6%"
           paddingTop="17%"
         />
