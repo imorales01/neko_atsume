@@ -39,7 +39,13 @@ class HotSpotContainer extends Component {
               position: 'relative',
               left: '4%',
               top: '36%',
-              zIndex: '1'
+              zIndex: '2'
+            }}
+            catStyle={{
+              position: 'relative',
+              left: '7%',
+              top: '8%',
+              zIndex: '2'
             }}
           />
         </div>
@@ -49,7 +55,13 @@ class HotSpotContainer extends Component {
               position: 'relative',
               left: '3%',
               top: '65%',
-              zIndex: '3'
+              zIndex: '1'
+            }}
+            catStyle={{
+              position: 'relative',
+              left: '6%',
+              top: '36%',
+              zIndex: '1'
             }}
           />
         </div>
@@ -59,6 +71,12 @@ class HotSpotContainer extends Component {
               position: 'relative',
               left: '35%',
               top: '72%',
+              zIndex: '3'
+            }}
+            catStyle={{
+              position: 'relative',
+              left: '35%',
+              top: '45%',
               zIndex: '3'
             }}
           />
@@ -71,6 +89,12 @@ class HotSpotContainer extends Component {
               top: '50%',
               zIndex: '4'
             }}
+            catStyle={{
+              position: 'relative',
+              left: '68%',
+              top: '23%',
+              zIndex: '4'
+            }}
           />
         </div>
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
@@ -81,6 +105,12 @@ class HotSpotContainer extends Component {
               top: '22%',
               zIndex: '5'
             }}
+            catStyle={{
+              position: 'relative',
+              left: '78%',
+              bottom: '7%',
+              zIndex: '5'
+            }}
           />
         </div>
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
@@ -89,6 +119,12 @@ class HotSpotContainer extends Component {
               position: 'relative',
               left: '75%',
               top: '84%',
+              zIndex: '6'
+            }}
+            catStyle={{
+              position: 'relative',
+              left: '80%',
+              top: '55%',
               zIndex: '6'
             }}
           />

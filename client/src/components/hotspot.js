@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import PlaceDownButton from '../img/UI/place.png';
 
-const cat = {
-  position: 'absolute',
-  height: '30%'
-}
-
 class HotSpot extends Component {
   constructor(props) {
     super(props);
@@ -15,10 +10,7 @@ class HotSpot extends Component {
       namePath: null,
       toy: null,
       hotStyle: this.props.hotStyle,
-      catStyle: {
-        paddingLeft: this.props.paddingLeftCat,
-        paddingTop: this.props.paddingTopCat
-      }
+      catStyle: this.props.catStyle,
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -64,19 +56,21 @@ class HotSpot extends Component {
                 
               />
             : 
-            <div>
-              <div style={cat}>
+            <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
+              <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
                 <img
                   src={require(`../img/toys_cats/${this.state.namePath}/${this.state.randNum}.gif`)}
                   alt={`A picture of ${this.state.namePath}`}
+                  className='cat'
                   style={this.state.catStyle}
                   onClick={this.onClick}
                 />
               </div>
-              <div style={cat}>
+              <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
                 <img
                   src={require(`../img/toys_cats/${this.state.namePath}/${this.state.toy}.gif`)}
                   alt={`A picture of ${this.state.namePath}`}
+                  className='cat'
                   style={this.state.catStyle}
                   onClick={this.onClick}
                 />
