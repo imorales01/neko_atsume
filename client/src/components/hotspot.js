@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PlaceDownButton from '../img/UI/place.png';
 
+
 const cat = {
   position: 'absolute',
   height: '30%'

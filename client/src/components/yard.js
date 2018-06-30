@@ -3,8 +3,7 @@ import Background from '../img/background.jpg';
 import Menu from './menu';
 import HotSpotContainer from './hotspotcontainer';
 import MenuInterface from './menu_interface';
-import MenuButton from '../img/UI/img_menu.png';
-import CloseButton from '../img/UI/img_close.png';
+
 
 const yardStyle = {
   margin: '0',
@@ -24,24 +23,17 @@ class Yard extends Component {
       menuOpen: false
     }
 
-    this.handleMenuClick = this.handleMenuClick.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  handleMenuClick() {
+  toggleMenu(){
     this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
-  };
+  }
 
   render() {
     return (
       <div className="background-image" style={yardStyle}>
-        <img
-          className="menu-button"
-          src={this.state.menuOpen ? CloseButton : MenuButton}
-          alt="Open or close menu"
-          onClick={this.handleMenuClick}
-          style={{ height: '10%', width: '10%' }}
-        />
-        {this.state.menuOpen ? <MenuInterface /> : <HotSpotContainer />}
+        {this.state.menuOpen ? <MenuInterface handleMenuClick={this.toggleMenu}/> : <HotSpotContainer toggleMenu={this.toggleMenu}/>}
       </div>
     );
   };

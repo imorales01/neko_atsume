@@ -5,6 +5,7 @@ import YardButton from '../img/UI/img_yard.png';
 import SettingsButton from '../img/UI/img_settings.png';
 import { Link } from 'react-router-dom';
 import CatAlbum from './cat_album';
+import CloseButton from '../img/UI/img_close.png';
 
 class MenuInterface extends Component {
   constructor(props) {
@@ -19,43 +20,52 @@ class MenuInterface extends Component {
     // YardButton -> Close menu
     // SettingsButton -> will be converted to logout
     return (
-      <table className="interface-container">
+      <div>
+        <img
+          className="menu-button"
+          src={CloseButton}
+          alt="Open or close menu"
+          onClick={this.props.handleMenuClick}
+          style={{ height: '10%', width: '10%' }}
+        />
+        <table className="interface-container">
 
-        <Link to="/cat_album">
-          <img
-            src={CatsButton}
-            alt="Button to go to Cat Album"
-            className="button"
-          />
-        </Link>
+          <Link to="/cat_album">
+            <img
+              src={CatsButton}
+              alt="Button to go to Cat Album"
+              className="button"
+            />
+          </Link>
 
-        <Link to="/cat_shop">
-          <img
-            src={ShopButton}
-            alt="Button to go to Cat Shop"
-            className="button"
-          />
-        </Link>
+          <Link to="/cat_shop">
+            <img
+              src={ShopButton}
+              alt="Button to go to Cat Shop"
+              className="button"
+            />
+          </Link>
 
-        <br />
+          <br />
 
-        <Link to="/">
-          <img
-            src={YardButton}
-            alt="Button to go to yard"
-            className="button"
-          />
-        </Link>
+          <Link to="/">
+            <img
+              src={YardButton}
+              alt="Button to go to yard"
+              className="button"
+            />
+          </Link>
 
-        <Link to="/">
-          <img
-            src={SettingsButton}
-            alt="Button to go to settings" 
-            lassName="button"
-          />
-        </Link>
+          <Link to="/">
+            <img
+              src={SettingsButton}
+              alt="Button to go to settings" 
+              lassName="button"
+            />
+          </Link>
 
-      </table>
+        </table>
+      </div>
     );
   }
 };
