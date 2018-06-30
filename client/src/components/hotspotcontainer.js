@@ -23,6 +23,7 @@ class HotSpotContainer extends Component {
     // TODO: px -> % and add more hot spots
     return (
       <div style={{ height: '100%' }}>
+        <div style={{position: 'absolute'}}>
         <img
           className="menu-button"
           src={this.state.menuOpen ? null : MenuButton}
@@ -30,10 +31,16 @@ class HotSpotContainer extends Component {
           onClick={this.handleMenuClick}
           style={{ height: '10%', width: '10%' }}
         />
+        </div>
+        <div style={{position: 'absolute', height: '100%', width: '100%'}}>
         <HotSpot
-          paddingLeft="6%"
-          paddingTop="17%"
+          hotStyle={{
+            position: 'relative',
+            left: '4%',
+            top: '36%'
+          }}
         />
+        </div>
         
       </div>
     );

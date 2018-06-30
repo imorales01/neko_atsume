@@ -14,10 +14,7 @@ class HotSpot extends Component {
       randNum: null,
       namePath: null,
       toy: null,
-      hotStyle: {
-        paddingLeft: this.props.paddingLeft,
-        paddingTop: this.props.paddingTop
-      },
+      hotStyle: this.props.hotStyle,
       catStyle: {
         paddingLeft: this.props.paddingLeftCat,
         paddingTop: this.props.paddingTopCat
@@ -64,6 +61,7 @@ class HotSpot extends Component {
                 onClick={this.onClick}
                 className="hotspot"
                 style={this.state.hotStyle}
+                
               />
             : 
             <div>
