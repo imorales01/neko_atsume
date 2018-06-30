@@ -19,7 +19,6 @@
 
 .button {
 	height: 35%;
-	width: 35%;
 	padding-left: 2%;
 	padding-right: 2%;
 	padding-top: 5%;
@@ -60,7 +59,7 @@
 	background-color: #F7DFBD;
 	border: 5px solid black;
 	border-radius: 50px;
-	height: 25%;
+	height: 35%;
 	width: 25%;
 	margin: auto;
 	position: relative;

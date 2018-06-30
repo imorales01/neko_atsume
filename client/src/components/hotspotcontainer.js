@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HotSpot from './hotspot';
+import MenuInterface from './menu_interface';
 import MenuButton from '../img/UI/img_menu.png';
-
 
 class HotSpotContainer extends Component {
   constructor(props) {
@@ -21,16 +21,27 @@ class HotSpotContainer extends Component {
 
   render() {
     return (
-      <div style={{ height: '100%' , width: '100%' }}>
+      <div style={{ height: '13%'}}>
 
-        <div style={{ position: 'absolute', zIndex: '100' }}>
-          <img
-            className="menu-button"
-            src={this.state.menuOpen ? null : MenuButton}
-            alt="Open menu"
-            onClick={this.handleMenuClick}
-          />
+        <div style={{ position: 'absolute', zIndex: '101' }}>
+          {this.state.menuOpen
+            ? null
+            : <img
+                className="menu-button"
+                src={MenuButton}
+                alt="Open menu"
+                onClick={this.handleMenuClick}
+              />
+          }
         </div>
+
+        {this.state.menuOpen
+          ? <div style={{ position: 'absolute', height: '100%' , width: '100%', zIndex: '100'}}>
+              <MenuInterface handleMenuClick={this.handleMenuClick}/>
+            </div>
+          : null
+        }
+
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
           <HotSpot
             hotStyle={{

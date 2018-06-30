@@ -33,7 +33,8 @@ class Yard extends Component {
   render() {
     return (
       <div className="background-image" style={yardStyle}>
-        {this.state.menuOpen ? <MenuInterface handleMenuClick={this.toggleMenu}/> : <HotSpotContainer toggleMenu={this.toggleMenu}/>}
+        
+        <HotSpotContainer toggleMenu={this.toggleMenu}/>
       </div>
     );
   };
