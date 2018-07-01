@@ -14,7 +14,7 @@ const yardStyle = {
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% 100%'
 };
-
+ 
 class Yard extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +25,7 @@ class Yard extends Component {
 
     this.toggleMenu = this.toggleMenu.bind(this);
   }
-
+  // right now, this doesnt do anything
   toggleMenu(){
     this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
   }

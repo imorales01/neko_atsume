@@ -6,16 +6,17 @@ const windowStyle = {
   backgroundImage: `url(${AlbumWindowImg})`,
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  backgroundSize: '85% 85%',
-  height: '250px',
-  width: '230px'
+  backgroundSize: '100% 100%',
+  height: '100%',
+  width: '100%',
 };
 
 const dateStyle = {
   position: 'relative',
   fontFamily: 'arial',
   textAlign: 'center',
-  top: '8%'
+  top: '8%',
+  height: '8%'
 };
 
 class CatAlbumWindow extends Component {

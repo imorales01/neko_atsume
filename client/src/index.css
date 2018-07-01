@@ -4,6 +4,7 @@
 	height: 100%;
 }
 
+
 .arrow-left {
   height: 8%;
   left: 0;
@@ -14,7 +15,7 @@
 .arrow-right {
   height: 8%;
   position: absolute;
-  right: 0;
+	right: 0;
 }
 
 .button {
@@ -89,10 +90,18 @@
 }
 
 .window-container {
-  height: 20%;
+	border: 5px solid grey;
+  height: 70%;
   margin: auto;
-  position: relative;
-  width: 50%;
+	position: relative;
+	top: 8%;
+	width: 40%;
+}
+
+.window {
+	position: absolute;
+	height: 45%;
+	width: 45%;
 }
 
 .yard-button {

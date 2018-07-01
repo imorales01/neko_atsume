@@ -40,8 +40,24 @@ class CatAlbumWindowContainer extends Component {
       catData.push(cat.data);
     }
 
-    let windows = catData.map((cat) => {
-      return <CatAlbumWindow catData={cat.data} date={cat.date} />;
+    let windows = catData.map((cat, i) => {
+      let x = {
+        0: {
+        },
+        1: {
+          left: "50%"
+        },
+        2: {
+          top: "50%",
+        },
+        3: {
+          top: "50%",
+          left: "50%"
+        }
+    
+      }
+      
+      return <div className="window" style={x[i%4]}> <CatAlbumWindow catData={cat.data} date={cat.date}/> </div>;
     });
 
     this.setState(() => ({ cats: catData, catCount: 7, filled: true, windows: windows }));
@@ -57,7 +73,7 @@ class CatAlbumWindowContainer extends Component {
     // FIXME: change that in the future
     return (
       <div className="window-container">
-        {this.props.page ? this.state.windows.slice(4) : this.state.windows.slice(0, 4)}
+        {this.props.page ? this.state.windows.slice(4) : this.state.windows.slice(0,4)}
       </div>
     );
   }

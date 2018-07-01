@@ -16,7 +16,6 @@ class HotSpotContainer extends Component {
 
   handleMenuClick() {
     this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
-    this.props.toggleMenu();
   };
 
   render() {
@@ -59,6 +58,7 @@ class HotSpotContainer extends Component {
             number='1'
           />
         </div>
+
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
           <HotSpot
             hotStyle={{
@@ -76,6 +76,7 @@ class HotSpotContainer extends Component {
             number='2'
           />
         </div>
+
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
           <HotSpot
             hotStyle={{
@@ -93,6 +94,7 @@ class HotSpotContainer extends Component {
             number='3'
           />
         </div>
+
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
           <HotSpot
             hotStyle={{
@@ -110,6 +112,7 @@ class HotSpotContainer extends Component {
             number='4'
           />
         </div>
+
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
           <HotSpot
             hotStyle={{
@@ -127,6 +130,7 @@ class HotSpotContainer extends Component {
             number='5'
           />
         </div>
+
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
           <HotSpot
             hotStyle={{
@@ -144,6 +148,7 @@ class HotSpotContainer extends Component {
             number='6'
           />
         </div>
+        
       </div>
     );
   }
