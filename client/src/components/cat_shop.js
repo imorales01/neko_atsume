@@ -22,13 +22,12 @@ class CatShop extends Component {
     this.handleClickLeft = this.handleClickLeft.bind(this);
     this.handleClickRight = this.handleClickRight.bind(this);
   }
-  // todo : handle multiple pages and compress into one function
-  handleClickRight() {
-    this.setState(() => ({ page: 1 }));
-  }
-  handleClickLeft() {
-    this.setState(() => ({ page: 0 }));
-  }
+	handleClickRight() {
+		this.setState((prevState) => ({ page: ++prevState.page }));
+	}
+	handleClickLeft() {
+		this.setState((prevState) => ({ page: --prevState.page }));
+	}
   // TODO: refactor routing, maybe
   render() {
     return (

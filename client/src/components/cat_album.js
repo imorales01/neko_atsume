@@ -22,31 +22,30 @@ class CatAlbum extends Component {
 		this.handleClickLeft = this.handleClickLeft.bind(this);
 		this.handleClickRight = this.handleClickRight.bind(this);
 	}
-	// TODO: handle multiple pages and compress into one function
 	handleClickRight() {
-		this.setState(() => ({ page: 1 }));
+		this.setState((prevState) => ({ page: ++prevState.page }));
 	}
 	handleClickLeft() {
-		this.setState(() => ({ page: 0 }));
+		this.setState((prevState) => ({ page: --prevState.page }));
 	}
 	render() {
 		return (
 			<div style={catStyle}>
 
 				<Link to="/">
-          <img
-            className="yard-button"
-            src={YardButton}
-            alt="Button to go to yard"
-            style={{ height: '10%', weight: '10%' }}
-          />
+					<img
+						className="yard-button"
+						src={YardButton}
+						alt="Button to go to yard"
+						style={{ height: '10%', weight: '10%' }}
+					/>
 				</Link>
 
 				<img src={Title} className="title" />
 				{this.state.page === 0 ? null : <img
-          src={arrowLeft}
-          alt="Left arrow to go back a page"
-					className="arrow-left"					
+					src={arrowLeft}
+					alt="Left arrow to go back a page"
+					className="arrow-left"
 					onClick={this.handleClickLeft}
 				/>
 				}
@@ -54,9 +53,9 @@ class CatAlbum extends Component {
 				<AlbumWindowContainer page={this.state.page} />
 
 				{this.state.page === 1 ? null : <img
-          src={arrowRight}
-          alt="Right arrow to go forward a page"
-					className="arrow-right"					
+					src={arrowRight}
+					alt="Right arrow to go forward a page"
+					className="arrow-right"
 					onClick={this.handleClickRight}
 				/>
 				}
