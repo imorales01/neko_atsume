@@ -23,12 +23,15 @@ class MenuInterface extends Component {
     // SettingsButton -> will be converted to logout
     return (
       <div>
-        <img
+      
+      <div style={{ position: 'absolute' }}>
+      <img
           className="menu-button"
           src={CloseButton}
           alt="Close menu"
           onClick={this.props.handleMenuClick}
-        />
+      />
+      </div>
         <table className="interface-container">
 
           <Link to="/cat_album">

@@ -13,6 +13,9 @@ const catStyle = {
 	backgroundPosition: 'center',
 };
 
+
+// TODO : CHANGE HOW ARROWS WORK
+// need to call db to find count of cats and then calculate number of pages (count/4)
 class CatAlbum extends Component {
 	constructor(props) {
 		super(props);
