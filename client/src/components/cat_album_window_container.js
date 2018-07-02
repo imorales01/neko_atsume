@@ -69,11 +69,15 @@ class CatAlbumWindowContainer extends Component {
       this.getCats();
     }
 
-    // right now this relies on the falsiness of page 0 and truthiness of page 1
-    // FIXME: change that in the future
+    let i = this.props.page;
+
     return (
       <div className="window-container">
-        {this.props.page ? this.state.windows.slice(4) : this.state.windows.slice(0,4)}
+        {
+          ((i*4)+4 > this.state.catCount)
+            ? this.state.windows.slice(i*4, this.state.catCount)
+            : this.state.windows.slice(i*4, i+4)
+        }
       </div>
     );
   }
