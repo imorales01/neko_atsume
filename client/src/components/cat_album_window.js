@@ -8,14 +8,14 @@ const windowStyle = {
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% 100%',
   height: '100%',
-  width: '100%',
+  width: '100%'
 };
 
 const dateStyle = {
   position: 'relative',
   fontFamily: 'arial',
   textAlign: 'center',
-  top: '8%',
+  top: '14%',
   height: '8%'
 };
 
@@ -36,7 +36,7 @@ class CatAlbumWindow extends Component {
 
     return (
       <div style={windowStyle}>
-        <div className="name" style={{ top: '16%' }}>
+        <div className="name" style={{ top: '11%' }}>
           {this.props.date ? this.props.catData[0].name : '? ? ? ?'}
           <br />
           <img

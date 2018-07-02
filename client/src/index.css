@@ -16,6 +16,7 @@
   height: 8%;
   position: absolute;
 	right: 0;
+	top: 40%
 }
 
 .button {
@@ -90,7 +91,6 @@
 }
 
 .window-container {
-	border: 5px solid grey;
   height: 70%;
   margin: auto;
 	position: relative;
@@ -100,6 +100,7 @@
 
 .window {
 	position: absolute;
+	padding: 3%;
 	height: 45%;
 	width: 45%;
 }
