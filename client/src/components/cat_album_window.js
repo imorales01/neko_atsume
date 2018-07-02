@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import AlbumWindowImg from '../img/UI/Windows/cat_album.png';
 
-// hard code height for now, depending on how big window container will be
 const windowStyle = {
   backgroundImage: `url(${AlbumWindowImg})`,
   backgroundPosition: 'center',
