@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Background from '../img/UI/TileBGs/cat_tile.png';
 import Title from '../img/UI/Titles/cat_title.png';
 import MenuButton from '../img/UI/img_menu.png';
-import YardButton from '../img/UI/img_yard.png';
+import CloseButton from '../img/UI/img_close.png';
 import AlbumWindowContainer from './cat_album_window_container';
 import arrowLeft from '../img/UI/arrow_left.png';
 import arrowRight from '../img/UI/arrow_right.png';
@@ -36,12 +36,14 @@ class CatAlbum extends Component {
 			<div style={catStyle}>
 
 				<Link to="/">
+					<div style={{ position: 'absolute' }}>
 					<img
-						className="yard-button"
-						src={YardButton}
-						alt="Button to go to yard"
-						style={{ height: '10%', weight: '10%' }}
+						className="menu-button"
+						src={CloseButton}
+						alt="Close menu"
+						onClick={this.props.handleMenuClick}
 					/>
+					</div>
 				</Link>
 
 				<img src={Title} className="title" />

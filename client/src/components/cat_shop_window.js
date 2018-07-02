@@ -16,7 +16,8 @@ const priceStyle = {
   fontFamily: 'arial',
   textAlign: 'center',
   paddingLeft: '10px',
-  top: '13%'
+  top: '13%',
+  height: '12%'
 };
 
 class CatShopWindow extends Component {

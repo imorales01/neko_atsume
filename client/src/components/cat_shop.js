@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import CatShopWindowContainer from './cat_shop_window_container';
 import Background from '../img/UI/TileBGs/shop_tile.png';
-import YardButton from '../img/UI/img_yard.png';
+import CloseButton from '../img/UI/img_close.png';
 import Title from '../img/UI/Titles/shop_title.png';
 import MenuButton from '../img/UI/img_menu.png';
 import arrowLeft from '../img/UI/arrow_left.png';
@@ -35,12 +35,14 @@ class CatShop extends Component {
       <div style={shopStyle}>
 
         <Link to="/">
-          <img
-            src={YardButton}
-            alt="Button to go to yard"
-            className="yard-button"
-            style={{ height: '10%', weight: '10%' }}
-          />
+          <div style={{ position: 'absolute' }}>
+            <img
+              className="menu-button"
+              src={CloseButton}
+              alt="Close menu"
+              onClick={this.props.handleMenuClick}
+            />
+          </div>
         </Link>
 
         <img
