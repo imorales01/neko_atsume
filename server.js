@@ -52,6 +52,17 @@ app.get('/api/cat/count', async (req, res) => {
 	res.send(count);
 });
 
+// send number of items in database
+app.get('/api/shop/count', async (req, res) => {
+	const count = await Item.find().count();
+	res.send(count);
+});
+
+// send list of items in inventory for user
+app.get('/api/inventory/', async (req, res) => {
+	const userData = await User.find({ userID });
+	res.send(userData.inventory);
+});
 
 // send the specified cat information and date collected if user has collected selected cat
 app.get('/api/cat/:id', async (req, res) => {
