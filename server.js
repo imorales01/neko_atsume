@@ -27,6 +27,7 @@ const userID = '5b2be22e1218433991453955';
 // 	res.send(true);
 // }
 
+
 // handle requests from client-side
 
 // test call
@@ -59,8 +60,6 @@ app.get('/api/cat/:id', async (req, res) => {
 			date = user.catCollection[i].dateCollected;
 		}
 	}
-	// set date for testing purposes
-	date = '01/10/2018';
 	const obj = { data, date };
 	res.send(obj);
 });
@@ -96,11 +95,17 @@ app.get('/api/cat/collected/:id', async (req, res) => {
 // set information about cats from client-side
 
 // set that a cat has been bought
-// todo : set an actual date
-// todo: test
+// TODO: test
 app.get('/api/cat/buy/:id', async (req, res) => {
 	const userData = await User.findById(userID);
-	const date = '06/22/2018';
+
+	const now = new Date();
+	const month = (now.getMonth() + 1).toString();
+	const day = now.getDate().toString();
+	const year = now.getFullYear().toString();
+
+	const date = `${month < 10 ? '0' + month : month}/${day < 10 ? '0' + day : day}/${ year }`
+
 	userData.catCollection.push({ catID: req.params.id, date: date })
 	userData.save();
 	res.send(true);
