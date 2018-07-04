@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import HotSpot from './hotspot';
 import MenuInterface from './menu_interface';
 import MenuButton from '../img/UI/img_menu.png';
+import fishCounterSilver from '../img/UI/sysimg_main_counter.png';
+import fishCounterGold from '../img/UI/sysimg_main_counter_gold.png';
+
+
+const fishStyle = {
+  height: '7%'
+}
 
 class HotSpotContainer extends Component {
   constructor(props) {
@@ -33,6 +40,12 @@ class HotSpotContainer extends Component {
               />
           }
         </div>
+
+        <div style={{ position: 'absolute', left: '3%', top: '92%'}}>
+        <img src={fishCounterSilver} style={fishStyle} />
+        <img src={fishCounterGold} style={fishStyle} />
+      </div>
+
 
         {this.state.menuOpen
           ? <div style={{ position: 'absolute', height: '100%' , width: '100%', zIndex: '100'}}>

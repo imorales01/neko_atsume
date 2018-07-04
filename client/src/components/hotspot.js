@@ -31,7 +31,10 @@ class HotSpot extends Component {
     //const randType = names[Math.floor(Math.random() * ((names.length-1) - 0 + 1)) + 0];
 
     const types = ['balls', 'pillows'];
-    const toys = { 'balls': ['redball'], 'pillows': ['mochi', 'sheep', 'beige'] };
+    const toys = {
+      'balls': ['redball'],
+      'pillows': ['mochi', 'sheep', 'beige'],
+    };
 
 
     const randType = types[Math.floor(Math.random() * ((types.length-1) - 0 + 1)) + 0];
