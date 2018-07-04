@@ -14,9 +14,11 @@ mongoose
 
 require('./models/user');
 require('./models/cat');
+require('./models/items');
 
 const User = mongoose.model('User');
 const Cat = mongoose.model('Cat');
+const Item = mongoose.model('Item');
 
 //test data
 const userID = '5b2be22e1218433991453955';
@@ -49,6 +51,7 @@ app.get('/api/cat/count', async (req, res) => {
 	const count = await Cat.find().count()
 	res.send(count);
 });
+
 
 // send the specified cat information and date collected if user has collected selected cat
 app.get('/api/cat/:id', async (req, res) => {

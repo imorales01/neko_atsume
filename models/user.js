@@ -5,7 +5,8 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   userID: String,
   username: String,
-  catCollection: [{ catID: Number, dateCollected: String }]
+  catCollection: [{ catID: Number, dateCollected: String }],
+  inventory: [ Number ]
 });
 
 // create model from schema
