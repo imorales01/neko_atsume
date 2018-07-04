@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import ShopWindowImg from '../img/UI/Windows/cat_shop.png';
 import axios from 'axios';
 
-// hard code height for now, depending on how big window container will be
 const windowStyle = {
   backgroundImage: `url(${ShopWindowImg})`,
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% 100%',
-  height: '250px',
-  width: '230px'
+  height: '100%',
+  width: '100%'
 };
 
 const priceStyle = {
@@ -17,7 +16,8 @@ const priceStyle = {
   fontFamily: 'arial',
   textAlign: 'center',
   paddingLeft: '10px',
-  top: '13%'
+  top: '13%',
+  height: '12%'
 };
 
 class CatShopWindow extends Component {
