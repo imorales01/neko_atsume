@@ -44,10 +44,10 @@ app.get('api/sample', async (req, res) => {
 // });
 
 // send number of cats in database
-// app.get('/api/cat/count', async (req, res) => {
-// 	const count = await Cat.count({}, function(err, count) { } )
-// 	res.send(count);
-// });
+app.get('/api/cat/count', async (req, res) => {
+	const count = await Cat.find().count()
+	res.send(count);
+});
 
 // send the specified cat information and date collected if user has collected selected cat
 app.get('/api/cat/:id', async (req, res) => {
