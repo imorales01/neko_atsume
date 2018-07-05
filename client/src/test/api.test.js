@@ -8,10 +8,12 @@ import { Z_DEFAULT_STRATEGY } from 'zlib';
 //   done();
 // });
 
-//beforeeach set user with test credentials
+// set user with test credentials
+beforeAll(() => {
 
+});
 
-test('get a cat from db', async (done)=> {
+test('get a cat from db', async (done) => {
 	const catData = await axios.get('http://localhost:5000/api/cat/2');
 	expect(catData.data).toEqual(expect.anything());
 	done();
