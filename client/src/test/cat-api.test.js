@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Z_DEFAULT_STRATEGY } from 'zlib';
 
 // apparently count still doesnt work? great.
 // test('cat count in db', async (done)=>{
@@ -27,6 +26,7 @@ test('set current user', async (done) => {
 });
 
 test('check if a specified cat has been collected', async (done) => {
+	expect.assertions(2);
 	let flag = await axios.get('http://localhost:5000/api/cat/collected/1');
 	// later this will be set true
 	expect(flag.data).toBe(false);
