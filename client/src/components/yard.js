@@ -3,6 +3,9 @@ import Background from '../img/background.jpg';
 import Menu from './menu';
 import HotSpotContainer from './hotspotcontainer';
 import MenuInterface from './menu_interface';
+import CatAlbum from './cat_album';
+import CatShop from './cat_shop';
+
 
 
 const yardStyle = {
@@ -20,21 +23,31 @@ class Yard extends Component {
     super(props);
 
     this.state = {
-      menuOpen: false
+      menuOpen: false,
+      albumOpen: false,
+      shopOpen: false,
+      inventoryOpen: false
     }
 
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.openPage = this.openPage.bind(this);
   }
   // right now, this doesnt do anything
   toggleMenu(){
     this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
   }
 
+  openPage(page){
+    this.setState((prevState) => ({ page: !prevState.page }));
+  }
+
   render() {
     return (
       <div className="background-image" style={yardStyle}>
-        
-        <HotSpotContainer toggleMenu={this.toggleMenu}/>
+        {albumOpen ? <CatAlbum /> : null}
+        {shopOpen ? <CatShop /> : null}
+        {/*inventoryOpen ? <Inventory /> : null*/}      
+        <HotSpotContainer toggleMenu={this.toggleMenu} openPage={this.openPage}/>
       </div>
     );
   };
