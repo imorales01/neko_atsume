@@ -11,11 +11,11 @@ import axios from 'axios';
 beforeAll(() => {
 
 });
-
-test('get a cat from db', async (done) => {
-	const catData = await axios.get('http://localhost:5000/api/cat/2');
-	expect(catData.data).toEqual(expect.anything());
-	done();
+describe('get a cat from the database', ()=>{
+  it('should return a cat', async () => {
+    const catData = await axios.get('http://localhost:5000/api/cat/2');
+    expect(catData.data).toEqual(expect.anything());
+  });
 });
 
 // todo
@@ -25,13 +25,18 @@ test('set current user', async (done) => {
 	done();
 });
 
-test('check if a specified cat has been collected', async (done) => {
-	expect.assertions(2);
-	let flag = await axios.get('http://localhost:5000/api/cat/collected/1');
-	// later this will be set true
-	expect(flag.data).toBe(false);
-	// cat with id 107 does not exist so will always return false
-	flag = await axios.get('http://localhost:5000/api/cat/collected/107');
-	expect(flag.data).toBe(false);
-	done();
+describe('check if a specified cat has been collected', () => {
+  expect.assertions(2);
+
+  it('should return true', async () => {
+    const flag = await axios.get('http://localhost:5000/api/cat/collected/1');
+    // later this will be set true
+    expect(flag.data).toBe(false);
+  });
+
+  it('should return false', async () => {
+    // cat with id 107 does not exist so will always return false
+    const flag = await axios.get('http://localhost:5000/api/cat/collected/107');
+    expect(flag.data).toBe(false);
+  });
 });
