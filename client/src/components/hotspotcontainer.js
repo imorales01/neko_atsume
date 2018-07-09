@@ -44,7 +44,7 @@ class HotSpotContainer extends Component {
 
         {this.state.menuOpen
           ? <div style={{ position: 'absolute', height: '100%' , width: '100%', zIndex: '100'}}>
-              <MenuInterface handleMenuClick={this.handleMenuClick}/>
+              <MenuInterface handleMenuClick={this.handleMenuClick} openPage={this.props.openPage}/>
             </div>
           : null
         }

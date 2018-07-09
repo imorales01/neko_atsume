@@ -39,6 +39,7 @@ class MenuInterface extends Component {
               src={CatsButton}
               alt="Button to go to Cat Album"
               className="button"
+              onClick={() => {this.props.openPage("album")}}
             />
           </Link>
 
@@ -47,6 +48,8 @@ class MenuInterface extends Component {
               src={ShopButton}
               alt="Button to go to Cat Shop"
               className="button"
+              onClick={() => {this.props.openPage("shop")}}
+
             />
           </Link>
 
@@ -57,6 +60,8 @@ class MenuInterface extends Component {
               src={YardButton}
               alt="Button to go to yard"
               className="button"
+              onClick={this.props.handleMenuClick}
+
             />
           </Link>
 
