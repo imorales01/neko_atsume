@@ -18,5 +18,9 @@
     "/api/*": {
       "target": "http://localhost:5000"
     }
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "react-test-renderer": "^16.4.1"
   }
 }
