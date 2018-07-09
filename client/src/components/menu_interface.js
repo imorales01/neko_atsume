@@ -3,7 +3,6 @@ import CatsButton from '../img/UI/img_cats.png';
 import ShopButton from '../img/UI/img_shop.png';
 import YardButton from '../img/UI/img_yard.png';
 import SettingsButton from '../img/UI/img_settings.png';
-import { Link } from 'react-router-dom';
 import CatAlbum from './cat_album';
 import CloseButton from '../img/UI/img_close.png';
 
@@ -13,10 +12,6 @@ class MenuInterface extends Component {
   };
 
   render() {
-    // TODO: refactor routing, maybe, and style buttons a little more
-    // Make "go to yard" actually go to yard
-
-    //render buttons on menu
     // CatsButton -> Cats Collection
     // ShopButton -> Shop
     // YardButton -> Close menu
@@ -34,44 +29,35 @@ class MenuInterface extends Component {
       </div>
         <table className="interface-container">
 
-          <Link to="/cat_album">
-            <img
-              src={CatsButton}
-              alt="Button to go to Cat Album"
-              className="button"
-              onClick={() => {this.props.openPage("album")}}
-            />
-          </Link>
+          <img
+            src={CatsButton}
+            alt="Button to go to Cat Album"
+            className="button"
+            onClick={() => {this.props.openPage("album")}}
+          />
 
-          <Link to="/cat_shop">
-            <img
-              src={ShopButton}
-              alt="Button to go to Cat Shop"
-              className="button"
-              onClick={() => {this.props.openPage("shop")}}
-
-            />
-          </Link>
+          <img
+            src={ShopButton}
+            alt="Button to go to Cat Shop"
+            className="button"
+            onClick={() => {this.props.openPage("shop")}}
+          />
 
           <br />
 
-          <Link to="/">
-            <img
-              src={YardButton}
-              alt="Button to go to yard"
-              className="button"
-              onClick={this.props.handleMenuClick}
+          <img
+            src={YardButton}
+            alt="Button to go to yard"
+            className="button"
+            onClick={this.props.handleMenuClick}
 
-            />
-          </Link>
+          />
 
-          <Link to="/">
-            <img
-              src={SettingsButton}
-              alt="Button to go to settings" 
-              className="button"
-            />
-          </Link>
+          <img
+            src={SettingsButton}
+            alt="Button to go to settings" 
+            className="button"
+          />
 
         </table>
       </div>
