@@ -33,14 +33,14 @@ class MenuInterface extends Component {
             src={CatsButton}
             alt="Button to go to Cat Album"
             className="button"
-            onClick={() => {this.props.openPage("album")}}
+            onClick={() => {this.props.togglePage(this.props.nav.ALBUM)}}
           />
 
           <img
             src={ShopButton}
             alt="Button to go to Cat Shop"
             className="button"
-            onClick={() => {this.props.openPage("shop")}}
+            onClick={() => {this.props.togglePage(this.props.nav.SHOP)}}
           />
 
           <br />
@@ -50,7 +50,6 @@ class MenuInterface extends Component {
             alt="Button to go to yard"
             className="button"
             onClick={this.props.handleMenuClick}
-
           />
 
           <img

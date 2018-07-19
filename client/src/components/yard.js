@@ -26,28 +26,54 @@ class Yard extends Component {
       menuOpen: false,
       albumOpen: false,
       shopOpen: false,
-      inventoryOpen: false
+      inventoryOpen: false,
+      nav: {
+        ALBUM: 'album',
+        SHOP: 'shop',
+        INVENTORY: 'inventory'
+      }
     }
 
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.openPage = this.openPage.bind(this);
+    this.togglePage = this.togglePage.bind(this);
   }
   // right now, this doesnt do anything
   toggleMenu(){
     this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
   }
 
-  openPage(page){
-    this.setState((prevState) => ({ page: !prevState.page }));
+  togglePage(page){
+    switch (page){
+      // case 'menu': {
+      //   this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
+      //   break;
+      // }
+      case 'album': {
+        this.setState((prevState) => ({ albumOpen: !prevState.albumOpen }));
+        break;
+      }
+      case 'shop': {
+        this.setState((prevState) => ({ shopOpen: !prevState.shopOpen }));
+        break;
+      }
+      case 'inventory': {
+        this.setState((prevState) => ({ inventoryOpen: !prevState.inventoryOpen }));
+        break;
+      }
+    }
   }
-
+  
   render() {
     return (
       <div className="background-image" style={yardStyle}>
-        {albumOpen ? <CatAlbum /> : null}
-        {shopOpen ? <CatShop /> : null}
+        {this.state.albumOpen ? <CatAlbum /> : null}
+        {this.state.shopOpen ? <CatShop /> : null}
         {/*inventoryOpen ? <Inventory /> : null*/}      
-        <HotSpotContainer toggleMenu={this.toggleMenu} openPage={this.openPage}/>
+        <HotSpotContainer
+          toggleMenu={this.toggleMenu}
+          togglePage={this.togglePage}
+          nav={this.state.nav}
+        />
       </div>
     );
   };
