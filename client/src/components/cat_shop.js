@@ -35,12 +35,12 @@ class CatShop extends Component {
       <div style={shopStyle}>
 
         <Link to="/">
-          <div style={{ position: 'absolute' }}>
+          <div style={{ position: 'absolute', zIndex: '999' }}>
             <img
               className="menu-button"
               src={CloseButton}
               alt="Close menu"
-              onClick={this.props.handleMenuClick}
+              onClick={() => { this.props.togglePage(this.props.nav.SHOP) }}
             />
           </div>
         </Link>

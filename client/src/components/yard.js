@@ -44,10 +44,6 @@ class Yard extends Component {
 
   togglePage(page){
     switch (page){
-      // case 'menu': {
-      //   this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
-      //   break;
-      // }
       case 'album': {
         this.setState((prevState) => ({ albumOpen: !prevState.albumOpen }));
         break;
@@ -66,8 +62,20 @@ class Yard extends Component {
   render() {
     return (
       <div className="background-image" style={yardStyle}>
-        {this.state.albumOpen ? <CatAlbum /> : null}
-        {this.state.shopOpen ? <CatShop /> : null}
+        {this.state.albumOpen
+          ? <CatAlbum
+              togglePage={this.togglePage}
+              nav={this.state.nav}
+            />
+          : null
+        }
+        {this.state.shopOpen
+          ? <CatShop
+            togglePage={this.togglePage}
+            nav={this.state.nav}
+            />
+          : null
+        }
         {/*inventoryOpen ? <Inventory /> : null*/}      
         <HotSpotContainer
           toggleMenu={this.toggleMenu}

@@ -41,7 +41,7 @@ class CatAlbum extends Component {
 						className="menu-button"
 						src={CloseButton}
 						alt="Close menu"
-						onClick={this.props.handleMenuClick}
+						onClick={() => { this.props.togglePage(this.props.nav.ALBUM) }}
 					/>
 					</div>
 				</Link>
