@@ -3,12 +3,9 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-// DB config
-const db = require('./config/keys').mongoURI;
-
-// Connect to MongoDB
+const { mongoURI } = require('./config/keys');
 mongoose
-  .connect(db)
+  .connect(mongoURI)
 	.then(() => console.log('MongoDB Connected'))
 	.catch(err => console.log(err));
 
@@ -22,19 +19,6 @@ require('./controllers/cat_album')(app);
 require('./controllers/shop')(app);
 require('./controllers/inventory')(app);
 require('./controllers/user')(app);
-
-
-// test call
-app.get('api/sample', async (req, res) => {
-	const data = await Cat.findOne();
-	console.log(data);
-	res.send(data);
-});
-
-
-
-// set information about cats from client-side
-
 
 const port = process.env.PORT || 5000;
 
