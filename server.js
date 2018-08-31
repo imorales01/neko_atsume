@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-//DB config
+// DB config
 const db = require('./config/keys').mongoURI;
 
-// // Connect to MongoDB
+// Connect to MongoDB
 mongoose
-	.connect(db)
+  .connect(db)
 	.then(() => console.log('MongoDB Connected'))
 	.catch(err => console.log(err));
 
@@ -18,10 +18,10 @@ require('./models/cat');
 const User = mongoose.model('User');
 const Cat = mongoose.model('Cat');
 
-require('controllers/cat_album')(app);
-require('controllers/shop')(app);
-require('controllers/inventory')(app);
-require('controllers/user')(app);
+require('./controllers/cat_album')(app);
+require('./controllers/shop')(app);
+require('./controllers/inventory')(app);
+require('./controllers/user')(app);
 
 
 // test call
