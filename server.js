@@ -17,7 +17,7 @@ const Cat = mongoose.model('Cat');
 
 require('./controllers/cat_album')(app);
 require('./controllers/shop')(app);
-require('./controllers/inventory')(app);
+require('./controllers/items')(app);
 require('./controllers/user')(app);
 
 const port = process.env.PORT || 5000;
