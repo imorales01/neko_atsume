@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-// define schema for cats
 const catSchema = new Schema({
   catID: Number,
   name: String,
@@ -13,5 +12,4 @@ const catSchema = new Schema({
   special: Boolean
 });
 
-// create model
 mongoose.model('Cat', catSchema);
