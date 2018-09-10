@@ -1,6 +1,7 @@
 import requests
 import json
 from bs4 import BeautifulSoup
+import sys
 
 
 def get_cats():
@@ -87,49 +88,81 @@ def get_items(category):
     return items
 
 
-def released_list():
-    #if flag cat
-    released_list = {
-        'Snowball': True,     
-    }
-    # if flag items
-    released_items = {
-        'Red Ball': {'action_category': ''},
-        'Sheep Cushion': {'action_category': ''},
-        'Sakuramochi Cushion': {'action_category': ''},
-    }
+def get_released_list(flag):
+    if (flag == "--cats"):
+        released_list = {
+            'Snowball': True,
+        }
+    elif (flag == "--items"):
+        released_list = {
+            'Red Ball': {'action_category': ''},
+            'Sheep Cushion': {'action_category': ''},
+            'Sakuramochi Cushion': {'action_category': ''},
+        }
     return released_list
 
 
-def is_released(name):
-    if name in released_list():
+def is_released(name, released_list):
+    if name in released_list:
         return True
     return False
 
 
-def preprocess(objects, object_list, id_):
+def preprocess(objects, object_list, id_, released_list):
     for obj in objects:
         id_ += 1
-        obj['releasedInGame'] = is_released(obj['name'])
+        obj['releasedInGame'] = is_released(obj['name'], released_list)
         obj['ID'] = id_   
         object_list.append(obj)
     return object_list
 
 
 def main():
-    id_ = 1
-    object_list = []
-    # if flag is cats
-    objects = get_cats()
-    object_ = "cats"
-    # if flag is items
-    objects = get_items()
-    object_ = "items"    
+    flags_enum = {"cats" : "--cats", "items" : "--items"}
 
-    object_list = preprocess(objects, object_list, id_)
+    if (len(sys.argv) >= 2
+            and (sys.argv[1] != flags_enum["cats"]
+                and sys.argv[1] != flags_enum["items"])):
+        print("Usage: npm run web-scrape -- [ --cats | --items ]")
+        return
 
-    with open(f'populate_db/{object_}.json', 'w+') as f:  
-        json.dump(object_list, f)
+    flags_to_run = []
+    if len(sys.argv) is 2:
+        flags_to_run = [sys.argv[1]]
+    else:
+        flags_to_run = ['--cats', '--items']
+
+    for flag in flags_to_run:
+        id_ = 1
+        object_list = []
+        released_list = get_released_list(flag)
+
+        if flag == "--cats":
+            cats = get_cats()
+            object_ = "cats"
+            object_list = preprocess(cats, object_list, id_, released_list)
+        
+        elif flag == "--items":
+            object_ = "items"    
+            categories = [
+                'Balls',
+                'Boxes',
+                'Beds',
+                'Furniture',
+                'Tunnels',
+                'Toys',
+                'Heating',
+                'Bags&Hiding',
+                'Scratching',
+                'Baskets',
+            ]
+            for category in categories:
+                items = get_items(category)
+                object_list = preprocess(items, object_list, id_, released_list)
+                id_ = len(object_list)
+
+        with open(f'populate_db/{object_}.json', 'w+') as f:  
+            json.dump(object_list, f)
 
 
 if __name__ == '__main__':

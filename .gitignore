@@ -1,3 +1,5 @@
 /node_modules/
 /package-lock.json
+/populate-db/cats.json
+/populate-db/items.json
 /config/
