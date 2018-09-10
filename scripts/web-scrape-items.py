@@ -93,7 +93,7 @@ def main():
         items_arr = preprocess(items, items_arr, id_)
         id_ = len(items_arr)
 
-    with open('items.json', 'w+') as f:  
+    with open('populate_db/items.json', 'w+') as f:  
         json.dump(items_arr, f)
 
 
