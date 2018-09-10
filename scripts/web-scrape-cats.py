@@ -72,7 +72,7 @@ def main():
     cats = get_cats()
     cats_arr = preprocess(cats, cats_arr, id_)
 
-    with open('cats.json', 'w+') as f:  
+    with open('populate_db/cats.json', 'w+') as f:  
         json.dump(cats_arr, f)
 
 
