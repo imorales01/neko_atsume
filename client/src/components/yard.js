@@ -14,19 +14,20 @@ const yardStyle = {
 };
  
 class Yard extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       menuOpen: false,
       albumOpen: false,
       shopOpen: false,
       inventoryOpen: false,
-      nav: {
-        ALBUM: 'album',
-        SHOP: 'shop',
-        INVENTORY: 'inventory'
-      }
+    }
+
+    this.nav = {
+      ALBUM: 'album',
+      SHOP: 'shop',
+      INVENTORY: 'inventory'
     }
 
     this.togglePage = this.togglePage.bind(this);
@@ -43,7 +44,9 @@ class Yard extends Component {
         break;
       }
       case 'inventory': {
-        this.setState((prevState) => ({ inventoryOpen: !prevState.inventoryOpen }));
+        this.setState(prevState => ({
+          inventoryOpen: !prevState.inventoryOpen
+        }));
         break;
       }
       default:
@@ -57,7 +60,7 @@ class Yard extends Component {
           ? <AlbumPage
               togglePage={this.togglePage}
               type={'Album'}
-              nav={this.state.nav}
+              nav={this.nav}
             />
           : null
         }
@@ -65,15 +68,14 @@ class Yard extends Component {
           ? <AlbumPage
             togglePage={this.togglePage}
             type={'Shop'}
-            nav={this.state.nav}
+            nav={this.nav}
             />
           : null
-        }
-        {/*inventoryOpen ? <Inventory /> : null*/}      
+        }  
         <HotSpotContainer
           toggleMenu={this.toggleMenu}
           togglePage={this.togglePage}
-          nav={this.state.nav}
+          nav={this.nav}
         />
       </div>
     );

@@ -38,8 +38,8 @@ class AlbumPage extends Component {
   // TODO: refactor routing, maybe
 	render() {
     let background;
-    let title;    
-		switch(this.props.type){
+    let title;
+		switch(this.props.type) {
 			case 'Album':
         background = AlbumBackground;
         title = AlbumTitle;
@@ -68,7 +68,9 @@ class AlbumPage extends Component {
 						src={CloseButton}
 						alt="Close menu"
             onClick={() => {
-              this.props.togglePage(this.props.nav[this.props.type.toUpperCase()]);
+              this.props.togglePage(
+                this.props.nav[this.props.type.toUpperCase()]
+              );
             }}
           />
 					</div>

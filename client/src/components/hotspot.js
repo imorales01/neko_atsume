@@ -37,24 +37,28 @@ class HotSpot extends Component {
       'pillows': ['mochi', 'sheep', 'beige'],
     };
 
-
     const randType = types[Math.floor(Math.random() * ((types.length-1) - 0 + 1)) + 0];
     const randToy = toys[randType][Math.floor(Math.random() * ((toys[randType].length-1) - 0 + 1)) + 0];
-    
 
-
-    this.setState(() => ({ namePath: randType, randNum: 1, toy: randToy, isEmpty: false }));
+    this.setState(() => ({
+      namePath: randType,
+      randNum: 1,
+      toy: randToy,
+      isEmpty: false
+    }));
 
   }
 
   render() {
+    let catPath = `../img/toys_cats/${this.state.namePath}/${this.state.randNum}.gif`;
+    let toyPath = `../img/toys_cats/${this.state.namePath}/${this.state.toy}.gif`;
     // TODO: remove onClick for the cat picture. thats there for testing purposes only
     return (
       <div>
         {(this.state.isEmpty)
             ? <img
                 src={PlaceDownButton}
-                alt={`Circle that shows you can click to place a cat, hotspot number ${this.props.number}`}
+                alt={`Hotspot that shows you can click to place a cat, number ${this.props.number}`}
                 onClick={this.onClick}
                 className="hotspot"
                 style={this.state.hotStyle}
@@ -63,7 +67,7 @@ class HotSpot extends Component {
             <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
               <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
                 <img
-                  src={require(`../img/toys_cats/${this.state.namePath}/${this.state.randNum}.gif`)}
+                  src={require(catPath)}
                   alt={`${this.state.namePath}`}
                   className='cat'
                   style={this.state.catStyle}
@@ -72,7 +76,7 @@ class HotSpot extends Component {
               </div>
               <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
                 <img
-                  src={require(`../img/toys_cats/${this.state.namePath}/${this.state.toy}.gif`)}
+                  src={require(toyPath)}
                   alt={`${this.state.namePath}`}
                   className='cat'
                   style={this.state.catStyle}
