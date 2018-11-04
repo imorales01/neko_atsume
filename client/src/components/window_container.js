@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import CatAlbumWindow from './cat_album_window';
+import AlbumWindow from './cat_album_window';
+import ShopWindow from './cat_shop_window';
 
 const windowStyling = {
   quadrant0: {},
@@ -16,7 +17,7 @@ const windowStyling = {
   }
 }
 
-class CatAlbumWindowContainer extends Component {
+class WindowContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -40,9 +41,30 @@ class CatAlbumWindowContainer extends Component {
       catData.push(cat.data);
     }
     let windows = catData.map((cat, index) => {
+      let windowComponent;
+      switch (this.props.type) {
+        case 'Album':
+          windowComponent = <AlbumWindow
+              catData={cat.data}
+              dateCollected={cat.date}
+            />;
+          break;
+        case 'Shop':
+          windowComponent = <ShopWindow
+              catData={cat.data}
+              dateCollected={cat.date}
+            />;
+        break;
+        case 'Inventory':
+          windowComponent = null;
+        break;
+      }
       return (
-        <div className="window" style={windowStyling[`quadrant${index%4}`]}>
-          <CatAlbumWindow catData={cat.data} dateCollected={cat.date}/>
+        <div className="window"
+          key={cat.data[0].catID}
+          style={windowStyling[`quadrant${index%4}`]
+        }>
+          {windowComponent}
         </div>);
     });
 
@@ -62,4 +84,4 @@ class CatAlbumWindowContainer extends Component {
   }
 };
 
-export default CatAlbumWindowContainer;
+export default WindowContainer;
