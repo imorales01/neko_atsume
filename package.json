@@ -9,7 +9,8 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "web-scrape": "python3 scripts/web-scrape.py"
+    "web-scrape": "python3 scripts/web-scrape.py",
+    "populate-db": "node scripts/populate-db.js"
   },
   "repository": {
     "type": "git",

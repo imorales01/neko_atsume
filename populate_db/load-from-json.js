@@ -1,4 +1,4 @@
-const callback = () => {
+const callback = err => {
   if (err) {
     console.log(`Error creating object`);
   } else {
@@ -7,10 +7,10 @@ const callback = () => {
 };
 
 module.exports = (Model, file) => {
-  const fs = require('fs');  
-  const file_contents = fs.readFileSync(file);
+  const fs = require('fs');
+  const file_contents = fs.readFileSync(`${__dirname}/${file}`, 'utf8');
   const objects = JSON.parse(file_contents);
-  Model.forEach(object => { 
+  objects.forEach(object => {
     Model.create(object, callback);
   });
 };
