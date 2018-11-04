@@ -22,12 +22,15 @@ class CatShop extends Component {
     this.handleClickLeft = this.handleClickLeft.bind(this);
     this.handleClickRight = this.handleClickRight.bind(this);
   }
+  
 	handleClickRight() {
 		this.setState((prevState) => ({ page: ++prevState.page }));
-	}
+  }
+  
 	handleClickLeft() {
 		this.setState((prevState) => ({ page: --prevState.page }));
-	}
+  }
+  
   // TODO: refactor routing, maybe
   render() {
     return (
@@ -76,4 +79,5 @@ class CatShop extends Component {
     );
   }
 };
+
 export default CatShop;

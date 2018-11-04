@@ -13,7 +13,6 @@ const catStyle = {
 	backgroundPosition: 'center',
 };
 
-
 // TODO : CHANGE HOW ARROWS WORK
 // need to call db to find count of cats and then calculate number of pages (count/4)
 class CatAlbum extends Component {
@@ -24,13 +23,16 @@ class CatAlbum extends Component {
 		}
 		this.handleClickLeft = this.handleClickLeft.bind(this);
 		this.handleClickRight = this.handleClickRight.bind(this);
-	}
+  }
+
 	handleClickRight() {
 		this.setState((prevState) => ({ page: ++prevState.page }));
-	}
+  }
+
 	handleClickLeft() {
 		this.setState((prevState) => ({ page: --prevState.page }));
-	}
+  }
+
 	render() {
 		return (
 			<div style={catStyle}>

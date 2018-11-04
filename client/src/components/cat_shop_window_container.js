@@ -84,5 +84,4 @@ class CatShopWindowContainer extends Component {
   }
 };
 
-
 export default CatShopWindowContainer;

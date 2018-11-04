@@ -36,17 +36,17 @@ class CatAlbumWindow extends Component {
     return (
       <div style={windowStyle}>
         <div className="name" style={{ top: '11%' }}>
-          {this.props.date ? this.props.catData[0].name : '? ? ? ?'}
+          {this.dateCollected.date ? this.props.catData[0].name : '? ? ? ?'}
           <br />
           <img
-            src={(this.props.date)
+            src={(this.props.dateCollected)
                     ? require(`../img/cats/${namePath}/icon.png`)
                     : require(`../img/cats/unknown_icon.png`)}
             className="icon"
           />
         </div>
         <div style={dateStyle}>
-          {this.props.date ? this.props.date : '--/--/----'}
+          {this.props.dateCollected ? this.props.dateCollected : '--/--/----'}
         </div>
       </div>
     );

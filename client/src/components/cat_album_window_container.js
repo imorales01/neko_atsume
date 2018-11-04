@@ -7,14 +7,14 @@ class CatAlbumWindowContainer extends Component {
     super(props);
 
     // cats is an array of all cats in database with
-    // a boolean indicating if user has collected that cat
-    // cats: [ {catData, isCollected} ]
+    // a date indicating when user collected that cat
+    // if collected at all (otherwise null)
     // catCount: number of all cats total
     // filled: if data about cats has already been retrieved
     this.state = {
       cats: [{
-        data: null,
-        date: null
+        catData: null,
+        dateCollected: null
       }],
       catCount: 0,
       filled: false,
@@ -26,12 +26,6 @@ class CatAlbumWindowContainer extends Component {
 
   // load state with all cats from database and if user has collected the cat
   async getCats() {
-    // FIXME: this
-    // get number of cats from database
-    // const count = await axios.get('/api/cat/count');
-    // console.log(count.data);
-
-    // catData: [{ }]
     const catData = [];
     for (let i = 1; i <= 7; i++) {
       // the data for the cat with id i
@@ -57,10 +51,18 @@ class CatAlbumWindowContainer extends Component {
     
       }
       
-      return <div className="window" style={x[i%4]}> <CatAlbumWindow catData={cat.data} date={cat.date}/> </div>;
+      return (
+        <div className="window" style={x[i%4]}>
+          <CatAlbumWindow catData={cat.data} dateCollected={cat.dateCollected}/>
+        </div>);
     });
 
-    this.setState(() => ({ cats: catData, catCount: 7, filled: true, windows: windows }));
+    this.setState(() => ({
+      cats: catData,
+      catCount: 7,
+      filled: true,
+      windows: windows
+    }));
   }
 
   // render as many components as count

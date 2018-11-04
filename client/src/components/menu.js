@@ -4,8 +4,8 @@ import MenuButton from '../img/UI/img_menu.png';
 import CloseButton from '../img/UI/img_close.png';
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       menuOpen: false
@@ -38,7 +38,6 @@ class Menu extends Component {
       </div>
     );
   };
-
 };
 
 export default Menu;

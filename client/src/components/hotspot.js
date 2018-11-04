@@ -14,6 +14,7 @@ class HotSpot extends Component {
     };
     this.onClick = this.onClick.bind(this);
   }
+
   // FIXME: dont hard code this
   onClick() {
     // const randNum = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
@@ -45,6 +46,7 @@ class HotSpot extends Component {
     this.setState(() => ({ namePath: randType, randNum: 1, toy: randToy, isEmpty: false }));
 
   }
+
   render() {
     // TODO: remove onClick for the cat picture. thats there for testing purposes only
     return (
