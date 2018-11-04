@@ -64,7 +64,7 @@ class HotSpot extends Component {
               <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
                 <img
                   src={require(`../img/toys_cats/${this.state.namePath}/${this.state.randNum}.gif`)}
-                  alt={`A picture of ${this.state.namePath}`}
+                  alt={`${this.state.namePath}`}
                   className='cat'
                   style={this.state.catStyle}
                   onClick={this.onClick}
@@ -73,7 +73,7 @@ class HotSpot extends Component {
               <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
                 <img
                   src={require(`../img/toys_cats/${this.state.namePath}/${this.state.toy}.gif`)}
-                  alt={`A picture of ${this.state.namePath}`}
+                  alt={`${this.state.namePath}`}
                   className='cat'
                   style={this.state.catStyle}
                   onClick={this.onClick}

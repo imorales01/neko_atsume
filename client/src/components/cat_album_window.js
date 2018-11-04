@@ -35,6 +35,7 @@ class CatAlbumWindow extends Component {
           {this.props.dateCollected ? this.props.catData[0].name : '? ? ? ?'}
           <br />
           <img
+            alt="A cat to buy"
             src={(this.props.dateCollected)
                     ? require(`../img/cats/${namePath}/icon.png`)
                     : require(`../img/cats/unknown_icon.png`)}

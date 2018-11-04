@@ -37,8 +37,8 @@ class HotSpotContainer extends Component {
         </div>
 
         <div style={{ position: 'absolute', left: '1%', top: '92%', height: '7%'}}>
-          <img src={fishCounterSilver} />
-          <img src={fishCounterGold} />
+          <img src={fishCounterSilver} alt="Silver fish counter" />
+          <img src={fishCounterGold} alt="Gold fish counter" />
         </div>
 
 
@@ -67,7 +67,7 @@ class HotSpotContainer extends Component {
               top: '8%',
               zIndex: '2'
             }}
-            number='1'
+            number="1"
           />
         </div>
 
@@ -85,7 +85,7 @@ class HotSpotContainer extends Component {
               top: '36%',
               zIndex: '1'
             }}
-            number='2'
+            number="2"
           />
         </div>
 
@@ -103,7 +103,7 @@ class HotSpotContainer extends Component {
               top: '45%',
               zIndex: '3'
             }}
-            number='3'
+            number="3"
           />
         </div>
 
@@ -121,7 +121,7 @@ class HotSpotContainer extends Component {
               top: '23%',
               zIndex: '4'
             }}
-            number='4'
+            number="4"
           />
         </div>
 
@@ -139,7 +139,7 @@ class HotSpotContainer extends Component {
               bottom: '7%',
               zIndex: '5'
             }}
-            number='5'
+            number="5"
           />
         </div>
 
@@ -157,7 +157,7 @@ class HotSpotContainer extends Component {
               top: '55%',
               zIndex: '6'
             }}
-            number='6'
+            number="6"
           />
         </div>
         

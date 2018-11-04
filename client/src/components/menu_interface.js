@@ -3,14 +3,9 @@ import CatsButton from '../img/UI/img_cats.png';
 import ShopButton from '../img/UI/img_shop.png';
 import YardButton from '../img/UI/img_yard.png';
 import SettingsButton from '../img/UI/img_settings.png';
-import AlbumPage from './album_page';
 import CloseButton from '../img/UI/img_close.png';
 
 class MenuInterface extends Component {
-  constructor(props) {
-    super(props);
-  };
-
   render() {
     // CatsButton -> Cats Collection
     // ShopButton -> Shop

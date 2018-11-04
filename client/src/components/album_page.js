@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import MenuButton from '../img/UI/img_menu.png';
 import CloseButton from '../img/UI/img_close.png';
 
 import WindowContainer from './window_container';
@@ -48,7 +47,8 @@ class AlbumPage extends Component {
 			case 'Shop':
         background = ShopBackground;
         title = ShopTitle;
-				break;
+        break;
+      default:
       case 'Inventory':
         background = null;
         title = null;
@@ -80,7 +80,7 @@ class AlbumPage extends Component {
           className="title"
         />
 
-				{(this.state.page === 0)
+				{this.state.page === 0
           ? null
           : <img
               src={arrowLeft}
@@ -92,7 +92,7 @@ class AlbumPage extends Component {
 
 				<WindowContainer page={this.state.page} type={this.props.type}/>
 
-				{(this.state.page === 1)
+				{this.state.page === 1
           ? null
           : <img
               src={arrowRight}

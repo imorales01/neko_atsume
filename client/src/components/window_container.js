@@ -55,6 +55,7 @@ class WindowContainer extends Component {
               dateCollected={cat.date}
             />;
         break;
+        default:
         case 'Inventory':
           windowComponent = null;
         break;
@@ -75,7 +76,6 @@ class WindowContainer extends Component {
     let page = this.props.page;
     let startIndex = page * 4;
     let endIndex = (page*4) + 4 > this.catCount ? this.catCount : (page*4) + 4;
-    console.log(this.state.windows);
     return (
       <div className="window-container">
         {this.state.windows ? this.state.windows.slice(startIndex, endIndex) : null}

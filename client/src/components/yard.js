@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Background from '../img/background.jpg';
-import Menu from './menu';
 import HotSpotContainer from './hotspotcontainer';
-import MenuInterface from './menu_interface';
 import AlbumPage from './album_page';
 
 const yardStyle = {
@@ -48,6 +46,7 @@ class Yard extends Component {
         this.setState((prevState) => ({ inventoryOpen: !prevState.inventoryOpen }));
         break;
       }
+      default:
     }
   }
   
