@@ -36,7 +36,7 @@ class CatAlbumWindowContainer extends Component {
     const catData = [];
     for (let i = 1; i <= 7; i++) {
       // cat IDs are enumerated from 1
-      const cat = await axios.get(`api/cat/${i}`);
+      const cat = await axios.get(`api/cat/shop/${i}`);
       catData.push(cat.data);
     }
     let windows = catData.map((cat, index) => {

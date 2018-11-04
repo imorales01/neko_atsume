@@ -3,8 +3,7 @@ import Background from '../img/background.jpg';
 import Menu from './menu';
 import HotSpotContainer from './hotspotcontainer';
 import MenuInterface from './menu_interface';
-import CatAlbum from './cat_album';
-import CatShop from './cat_shop';
+import AlbumPage from './album_page';
 
 const yardStyle = {
   margin: '0',
@@ -56,15 +55,17 @@ class Yard extends Component {
     return (
       <div className="background-image" style={yardStyle}>
         {this.state.albumOpen
-          ? <CatAlbum
+          ? <AlbumPage
               togglePage={this.togglePage}
+              type={'Album'}
               nav={this.state.nav}
             />
           : null
         }
         {this.state.shopOpen
-          ? <CatShop
+          ? <AlbumPage
             togglePage={this.togglePage}
+            type={'Shop'}
             nav={this.state.nav}
             />
           : null

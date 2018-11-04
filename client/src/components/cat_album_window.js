@@ -19,10 +19,6 @@ const dateStyle = {
 };
 
 class CatAlbumWindow extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let namePath = this.props.catData[0].name;
     // FIXME: dont hardcode this lol 
