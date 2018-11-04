@@ -6,8 +6,6 @@ import MenuInterface from './menu_interface';
 import CatAlbum from './cat_album';
 import CatShop from './cat_shop';
 
-
-
 const yardStyle = {
   margin: '0',
   height: '100%',
@@ -34,12 +32,7 @@ class Yard extends Component {
       }
     }
 
-    this.toggleMenu = this.toggleMenu.bind(this);
     this.togglePage = this.togglePage.bind(this);
-  }
-  // right now, this doesnt do anything
-  toggleMenu(){
-    this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
   }
 
   togglePage(page){

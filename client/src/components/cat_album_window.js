@@ -36,7 +36,7 @@ class CatAlbumWindow extends Component {
     return (
       <div style={windowStyle}>
         <div className="name" style={{ top: '11%' }}>
-          {this.dateCollected.date ? this.props.catData[0].name : '? ? ? ?'}
+          {this.props.dateCollected ? this.props.catData[0].name : '? ? ? ?'}
           <br />
           <img
             src={(this.props.dateCollected)
