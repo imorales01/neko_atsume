@@ -50,8 +50,6 @@ class HotSpot extends Component {
   }
 
   render() {
-    let catPath = `../img/toys_cats/${this.state.namePath}/${this.state.randNum}.gif`;
-    let toyPath = `../img/toys_cats/${this.state.namePath}/${this.state.toy}.gif`;
     // TODO: remove onClick for the cat picture. thats there for testing purposes only
     return (
       <div>
@@ -61,25 +59,25 @@ class HotSpot extends Component {
                 alt={`Hotspot that shows you can click to place a cat, number ${this.props.number}`}
                 onClick={this.onClick}
                 className="hotspot"
-                style={this.state.hotStyle}
+                id={`hotspot${this.props.number}`}
               />
             : 
             <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
               <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
                 <img
-                  src={require(catPath)}
+                  src={require(`../img/toys_cats/${this.state.namePath}/${this.state.randNum}.gif`)}
                   alt={`${this.state.namePath}`}
                   className='cat'
-                  style={this.state.catStyle}
+                  id={`cat${this.props.number}`}
                   onClick={this.onClick}
                 />
               </div>
               <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
                 <img
-                  src={require(toyPath)}
+                  src={require(`../img/toys_cats/${this.state.namePath}/${this.state.toy}.gif`)}
                   alt={`${this.state.namePath}`}
                   className='cat'
-                  style={this.state.catStyle}
+                  id={`cat${this.props.number}`}
                   onClick={this.onClick}
                 />
               </div>
