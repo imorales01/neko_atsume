@@ -19,10 +19,6 @@ const dateStyle = {
 };
 
 class CatAlbumWindow extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let namePath = this.props.catData[0].name;
     // FIXME: dont hardcode this lol 
@@ -36,17 +32,18 @@ class CatAlbumWindow extends Component {
     return (
       <div style={windowStyle}>
         <div className="name" style={{ top: '11%' }}>
-          {this.props.date ? this.props.catData[0].name : '? ? ? ?'}
+          {this.props.dateCollected ? this.props.catData[0].name : '? ? ? ?'}
           <br />
           <img
-            src={(this.props.date)
+            alt="A cat to buy"
+            src={(this.props.dateCollected)
                     ? require(`../img/cats/${namePath}/icon.png`)
                     : require(`../img/cats/unknown_icon.png`)}
             className="icon"
           />
         </div>
         <div style={dateStyle}>
-          {this.props.date ? this.props.date : '--/--/----'}
+          {this.props.dateCollected ? this.props.dateCollected : '--/--/----'}
         </div>
       </div>
     );

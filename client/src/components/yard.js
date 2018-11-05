@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import Background from '../img/background.jpg';
-import Menu from './menu';
 import HotSpotContainer from './hotspotcontainer';
-import MenuInterface from './menu_interface';
-import CatAlbum from './cat_album';
-import CatShop from './cat_shop';
-
-
+import AlbumPage from './album_page';
 
 const yardStyle = {
   margin: '0',
@@ -19,27 +14,23 @@ const yardStyle = {
 };
  
 class Yard extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       menuOpen: false,
       albumOpen: false,
       shopOpen: false,
       inventoryOpen: false,
-      nav: {
-        ALBUM: 'album',
-        SHOP: 'shop',
-        INVENTORY: 'inventory'
-      }
     }
 
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.nav = {
+      ALBUM: 'album',
+      SHOP: 'shop',
+      INVENTORY: 'inventory'
+    }
+
     this.togglePage = this.togglePage.bind(this);
-  }
-  // right now, this doesnt do anything
-  toggleMenu(){
-    this.setState((prevState) => ({ menuOpen: !prevState.menuOpen }));
   }
 
   togglePage(page){
@@ -53,9 +44,12 @@ class Yard extends Component {
         break;
       }
       case 'inventory': {
-        this.setState((prevState) => ({ inventoryOpen: !prevState.inventoryOpen }));
+        this.setState(prevState => ({
+          inventoryOpen: !prevState.inventoryOpen
+        }));
         break;
       }
+      default:
     }
   }
   
@@ -63,24 +57,25 @@ class Yard extends Component {
     return (
       <div className="background-image" style={yardStyle}>
         {this.state.albumOpen
-          ? <CatAlbum
+          ? <AlbumPage
               togglePage={this.togglePage}
-              nav={this.state.nav}
+              type={'Album'}
+              nav={this.nav}
             />
           : null
         }
         {this.state.shopOpen
-          ? <CatShop
+          ? <AlbumPage
             togglePage={this.togglePage}
-            nav={this.state.nav}
+            type={'Shop'}
+            nav={this.nav}
             />
           : null
-        }
-        {/*inventoryOpen ? <Inventory /> : null*/}      
+        }  
         <HotSpotContainer
           toggleMenu={this.toggleMenu}
           togglePage={this.togglePage}
-          nav={this.state.nav}
+          nav={this.nav}
         />
       </div>
     );

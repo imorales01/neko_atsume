@@ -3,14 +3,9 @@ import CatsButton from '../img/UI/img_cats.png';
 import ShopButton from '../img/UI/img_shop.png';
 import YardButton from '../img/UI/img_yard.png';
 import SettingsButton from '../img/UI/img_settings.png';
-import CatAlbum from './cat_album';
 import CloseButton from '../img/UI/img_close.png';
 
 class MenuInterface extends Component {
-  constructor(props) {
-    super(props);
-  };
-
   render() {
     // CatsButton -> Cats Collection
     // ShopButton -> Shop
@@ -18,16 +13,15 @@ class MenuInterface extends Component {
     // SettingsButton -> will be converted to logout
     return (
       <div>
-      
-      <div style={{ position: 'absolute' }}>
-      <img
-          className="menu-button"
-          src={CloseButton}
-          alt="Close menu"
-          onClick={this.props.handleMenuClick}
-      />
-      </div>
-        <table className="interface-container">
+        <div style={{ position: 'absolute' }}>
+        <img
+            className="menu-button"
+            src={CloseButton}
+            alt="Close menu"
+            onClick={this.props.handleMenuClick}
+        />
+        </div>
+        <div className="interface-container">
 
           <img
             src={CatsButton}
@@ -58,7 +52,7 @@ class MenuInterface extends Component {
             className="button"
           />
 
-        </table>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ShopWindowImg from '../img/UI/Windows/cat_shop.png';
-import axios from 'axios';
+//import axios from 'axios';
 
 const windowStyle = {
   backgroundImage: `url(${ShopWindowImg})`,

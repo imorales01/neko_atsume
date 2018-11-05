@@ -49,6 +49,12 @@
 	opacity: 100;
 }
 
+.hotspotDiv {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
 .icon {
   height: 30%;
   margin: auto;
@@ -109,4 +115,88 @@
 	position: relative;
 	top: 20px;
 	left: 20px;
+}
+
+#hotspot1 {
+	position: relative;
+	left: 4%;
+	top: 36%;
+	z-index: 2;
+}
+
+#cat1 {
+	position: relative;
+	left: 7%;
+	top: 8%;
+	z-index: 2;
+}
+
+#hotspot2 {
+	position: relative;
+	left: 3%;
+	top: 65%;
+	z-index: 1;
+}
+
+#cat2 {
+  position: relative;
+  left: 6%;
+  top: 36%;
+  z-index: 1;
+}
+
+#hotspot3 {
+	position: relative;	
+	left: 35%;
+	top: 72%;
+	z-index: 3;
+}
+
+#cat3 {
+	position: relative;
+	left: 35%;
+	top: 45%;
+	z-index: 3;
+}
+
+#hotspot4 {
+	position: relative;
+	left: 65%;
+	top: 50%;
+	z-index: 4;
+}
+
+#cat4 {
+	position: relative;
+	left: 68%;
+	top: 23%;
+	z-index: 4;
+}
+
+#hotspot5 {
+	position: relative;
+	left: 75%;
+	top: 22%;
+	z-index: 5;
+}
+
+#cat5 {
+	position: relative;
+	left: 78%;
+	bottom: 7%;
+	z-index: 5;
+}
+
+#hotspot6 {
+	position: relative;
+	left: 75%;
+	top: 84%;
+	z-index: 6;
+}
+
+#cat6 {
+	position: relative;
+	left: 80%;
+	top: 55%;
+	z-index: 6;
 }
