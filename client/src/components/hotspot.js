@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PlaceDownButton from '../img/UI/place.png';
 
+const catAndToyStyle = { position: 'absolute', height: '100%', width: '100%' };
+
 class HotSpot extends Component {
   constructor(props) {
     super(props);
@@ -23,14 +25,6 @@ class HotSpot extends Component {
     // const namePath = names[randNum2];
     // this.setState(() => ({ namePath, randNum, isEmpty: false }));
     
-    //get toy img
-    //get cat img that corresponds
-    // types of toys
-    // const names = ['balls', 'pillows'];
-    // const pillows = ['mochi', 'sheep', 'beige'];
-    // const balls = ['redball'];
-    //const randType = names[Math.floor(Math.random() * ((names.length-1) - 0 + 1)) + 0];
-
     const types = ['balls', 'pillows'];
     const toys = {
       'balls': ['redball'],
@@ -46,7 +40,6 @@ class HotSpot extends Component {
       toy: randToy,
       isEmpty: false
     }));
-
   }
 
   render() {
@@ -54,34 +47,34 @@ class HotSpot extends Component {
     return (
       <div>
         {(this.state.isEmpty)
-            ? <img
-                src={PlaceDownButton}
-                alt={`Hotspot that shows you can click to place a cat, number ${this.props.number}`}
+          ? <img
+              src={PlaceDownButton}
+              alt={`Hotspot that shows you can click to place a cat, number ${this.props.number}`}
+              onClick={this.onClick}
+              className="hotspot"
+              id={`hotspot${this.props.number}`}
+            />
+          : 
+          <div>
+            <div style={catAndToyStyle}>
+              <img
+                src={require(`../img/toys_cats/${this.state.namePath}/${this.state.randNum}.gif`)}
+                alt={`${this.state.namePath}`}
+                className='cat'
+                id={`cat${this.props.number}`}
                 onClick={this.onClick}
-                className="hotspot"
-                id={`hotspot${this.props.number}`}
               />
-            : 
-            <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
-              <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
-                <img
-                  src={require(`../img/toys_cats/${this.state.namePath}/${this.state.randNum}.gif`)}
-                  alt={`${this.state.namePath}`}
-                  className='cat'
-                  id={`cat${this.props.number}`}
-                  onClick={this.onClick}
-                />
-              </div>
-              <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
-                <img
-                  src={require(`../img/toys_cats/${this.state.namePath}/${this.state.toy}.gif`)}
-                  alt={`${this.state.namePath}`}
-                  className='cat'
-                  id={`cat${this.props.number}`}
-                  onClick={this.onClick}
-                />
-              </div>
             </div>
+            <div style={catAndToyStyle}>
+              <img
+                src={require(`../img/toys_cats/${this.state.namePath}/${this.state.toy}.gif`)}
+                alt={`${this.state.namePath}`}
+                className='cat'
+                id={`cat${this.props.number}`}
+                onClick={this.onClick}
+              />
+            </div>
+          </div>
         }
       </div>
     );

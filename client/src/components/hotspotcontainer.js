@@ -36,8 +36,7 @@ class HotSpotContainer extends Component {
 
   render() {
     return (
-      <div style={{ height: '13%' }}>
-
+      <div>
         <div style={{ position: 'absolute', zIndex: '101' }}>
           {this.state.menuOpen
             ? null
@@ -68,7 +67,7 @@ class HotSpotContainer extends Component {
 
         {[1, 2, 3, 4, 5, 6].map(num => {
             return (
-              <div className="hotspotDiv">
+              <div className="hotspotDiv" key={num}>
                 <HotSpot number={num} />
               </div>
             );

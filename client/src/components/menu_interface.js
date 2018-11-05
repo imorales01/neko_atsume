@@ -21,7 +21,7 @@ class MenuInterface extends Component {
             onClick={this.props.handleMenuClick}
         />
         </div>
-        <table className="interface-container">
+        <div className="interface-container">
 
           <img
             src={CatsButton}
@@ -52,7 +52,7 @@ class MenuInterface extends Component {
             className="button"
           />
 
-        </table>
+        </div>
       </div>
     );
   }
