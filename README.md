@@ -1,9 +1,14 @@
-# Neko Atsume v2
+# Neko Atsume Web
+A web port of the mobile phone game Neko Atsume, or "Cat Collector."
 
-> Our project is based off the game "Neko Atsume: Kitty Collector" , created by Hit-Point Co.,Ltd., which was released on October 20, 2014. More information can be found at https://en.wikipedia.org/wiki/Neko_Atsume
+At the point of development it is now, you can click on the hotspots on the yard to place a cat there.
+Eventually, you will be able to buy toys to bring cats to your yard to add them to your Cat Album.
 
-**Step 1:** Clone the repository through terminal: 'git clone https://github.com/imorales01/neko_atsume.git'
+![yard](https://user-images.githubusercontent.com/28125234/47974633-8660fa80-e078-11e8-891f-92aaf04975b2.png)
+![menu](https://user-images.githubusercontent.com/28125234/47975532-33894200-e07c-11e8-9bd6-c347f18f4d94.png)
 
-**Step 2:** Install dependencies 'npm install'
+## Dependencies and Tools
+Written in Node 8.4, MongoDB with mLab, and Python 3.6 for minor scripts.
 
-**Step 3:** Run the application, 'npm start'
+## Run locally
+Install dependencies and run  `npm run dev`
